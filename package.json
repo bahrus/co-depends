@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/bahrus/co-depends/issues"
   },
-  "homepage": "https://github.com/bahrus/co-depends#readme"
+  "homepage": "https://github.com/bahrus/co-depends#readme",
+  "dependencies": {
+    "xtal-latx": "0.0.76"
+  }
 }
