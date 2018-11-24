@@ -1,47 +1,43 @@
-import {XtallatX} from 'xtal-latx/xtal-latx.js';
-import {define} from 'xtal-latx/define.js';
-
+import { XtallatX } from 'xtal-latx/xtal-latx.js';
+import { define } from 'xtal-latx/define.js';
 // Based on https://codepen.io/soulwire/pen/mErPAK
 export class TextScramble extends XtallatX(HTMLElement) {
-    chars = '!<>-_\\/[]{}—=+*^?#________';
-    queue!: any[];
-    frame!: number;
-    frameRequest: any;
     //resolve: any;
     constructor() {
         super();
+        this.chars = '!<>-_\\/[]{}—=+*^?#________';
         this.update = this.update.bind(this);
     }
-    static get is(){
+    static get is() {
         return 'co-depends-text-scramble';
     }
-    static get observedAttributes(){
+    static get observedAttributes() {
         return super.observedAttributes.concat(['text']);
     }
-    connectedCallback(){
+    connectedCallback() {
         this._upgradeProperties(['text']);
     }
-    attributeChangedCallback(n: string, ov: string, nv: string){
+    attributeChangedCallback(n, ov, nv) {
         super.attributeChangedCallback(n, ov, nv);
-        switch(n){
+        switch (n) {
             case 'text':
                 this._text = nv;
                 this.setText(ov, nv);
                 break;
         }
     }
-    _text!: string;
-    get text(){
+    get text() {
         return this._text;
     }
-    set text(nv){
+    set text(nv) {
         this.attr('text', nv);
     }
-    setText(oldText: string, newText: string) {
-        if(oldText === null) oldText = '';
+    setText(oldText, newText) {
+        if (oldText === null)
+            oldText = '';
         const length = Math.max(oldText.length, newText.length);
         //const promise = new Promise((resolve) => this.resolve = resolve)
-        this.queue = []
+        this.queue = [];
         for (let i = 0; i < length; i++) {
             const from = oldText[i] || '';
             const to = newText[i] || '';
@@ -50,7 +46,7 @@ export class TextScramble extends XtallatX(HTMLElement) {
             this.queue.push({ from, to, start, end });
         }
         cancelAnimationFrame(this.frameRequest);
-        this.frame = 0
+        this.frame = 0;
         this.update();
         //return promise;
     }
@@ -62,20 +58,23 @@ export class TextScramble extends XtallatX(HTMLElement) {
             if (this.frame >= end) {
                 complete++;
                 output += to;
-            } else if (this.frame >= start) {
+            }
+            else if (this.frame >= start) {
                 if (!char || Math.random() < 0.28) {
                     char = this.randomChar();
                     this.queue[i].char = char;
                 }
                 output += `<span class="dud">${char}</span>`;
-            } else {
+            }
+            else {
                 output += from;
             }
         }
         this.innerHTML = output;
         if (complete === this.queue.length) {
-            this.de('text-setting-complete',{}, true);
-        } else {
+            this.de('text-setting-complete', {}, true);
+        }
+        else {
             this.frameRequest = requestAnimationFrame(this.update);
             this.frame++;
         }
@@ -85,3 +84,4 @@ export class TextScramble extends XtallatX(HTMLElement) {
     }
 }
 define(TextScramble);
+//# sourceMappingURL=text-scramble.js.map

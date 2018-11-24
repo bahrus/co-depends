@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="body">
+        <div class="container">
+            <co-depends-text-scramble id="cdts" class="text"></co-depends-text-scramble>
+        </div>
+
+        <script>
+            const phrases = [
+                'Neo,',
+                'sooner or later',
+                'you\'re going to realize',
+                'just as I did',
+                'that there\'s a difference',
+                'between knowing the path',
+                'and walking the path'
+            ];
+
+            let counter = 0;
+            cdts.addEventListener('text-setting-complete', e => {
+                setTimeout(() => {
+                    next();
+                }, 800)
+            });
+            const next = () => {
+                cdts.text = phrases[counter];
+                counter = (counter + 1) % phrases.length;
+            }
+
+            next();
+        </script>
+        <style>
+            @import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100';
+        html,
+        div.body {
+        font-family: 'Roboto Mono', monospace;
+        background: #212121;
+        height: 100%;
+        }
+        .container {
+            height: 100%;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+        .text {
+            font-weight: 100;
+            font-size: 28px;
+            color: #fafafa;
+        }
+.dud {
+  color: #757575;
+}
+        </style>
+        <script type="module" src="../text-scramble.js"></script>
+    </div>
+</body>
+
+</html>
