@@ -18,5 +18,8 @@
   "homepage": "https://github.com/bahrus/co-depends#readme",
   "dependencies": {
     "xtal-latx": "0.0.76"
+  },
+  "devDependencies": {
+    "jiife": "0.0.8"
   }
 }
