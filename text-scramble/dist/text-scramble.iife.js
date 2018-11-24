@@ -1,4 +1,7 @@
-export function define(custEl) {
+
+    //@ts-check
+    (function () {
+    function define(custEl) {
     let tagName = custEl.is;
     if (customElements.get(tagName)) {
         console.warn('Already registered ' + tagName);
@@ -6,12 +9,12 @@ export function define(custEl) {
     }
     customElements.define(tagName, custEl);
 }
-export const disabled = 'disabled';
+const disabled = 'disabled';
 /**
  * Base class for many xtal- components
  * @param superClass
  */
-export function XtallatX(superClass) {
+function XtallatX(superClass) {
     return class extends superClass {
         constructor() {
             super(...arguments);
@@ -102,10 +105,8 @@ export function XtallatX(superClass) {
         }
     };
 }
-import { XtallatX } from 'xtal-latx/xtal-latx.js';
-import { define } from 'xtal-latx/define.js';
 // Based on https://codepen.io/soulwire/pen/mErPAK
-export class TextScramble extends XtallatX(HTMLElement) {
+class TextScramble extends XtallatX(HTMLElement) {
     //resolve: any;
     constructor() {
         super();
@@ -188,3 +189,5 @@ export class TextScramble extends XtallatX(HTMLElement) {
     }
 }
 define(TextScramble);
+    })();  
+        
