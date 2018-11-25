@@ -68,3 +68,31 @@ co-depends is a suite of web components based on code-pen entries.
 ```
 -->
 
+## Entry 2.  [Pure CSS Minesweeper](https://codepen.io/bali_balo/pen/BLJONk)
+
+Being that this is css-only, it seems quite ridiculous to have to encode it in JS to make it a web component.  So a [deframed](https://www.webcomponents.org/element/deframe) version can be seen in action [here](https://bahrus.github.io/co-depends/css-minesweeper/demo/dev.html).
+
+You reference it via an iframe:
+
+```html
+<body>
+    ...
+    <iframe src="../css-minesweeper.html"></iframe>
+    <co-depends-css-minesweeper></co-depends-css-minesweeper>
+</body>
+```
+
+Or you can turn the beautiful css-only implementation into a js-only implementation as shown below:
+
+<!--
+```
+<custom-element-demo>
+  <template>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/co-depends@0.0.6/css-minesweeper/css-minesweeper.js"></script>
+    <co-depends-css-minesweeper-js></co-depends-css-minesweeper-js>
+   </template>
+</custom-element-demo>
+```
+-->
+
+
