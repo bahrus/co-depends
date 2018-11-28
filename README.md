@@ -95,6 +95,8 @@ Or you can turn the beautiful css-only implementation into a js-only implementat
 ```
 -->
 
+NB:  To my surprise, the performance of the js version seems to out perform the deframed version in this particular case, when throttling the network and CPU.
+
 ## Entry 3.  [Parallax Flipping Cards](https://codepen.io/tyrellrummage/pen/wqGgLO)
 
 
