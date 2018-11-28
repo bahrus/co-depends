@@ -1,15 +1,15 @@
 const pfcTemplate = document.createElement('template');
 pfcTemplate.innerHTML = /* html */`
 <div class="container">
-    <div class="front" style="background-image: url(https://unsplash.it/500/500/)">
+    <div class="front">
         <div class="inner">
-            <p>Diligord</p>
-<span>Lorem ipsum</span>
+            <slot name="front"></slot>           
         </div>
     </div>
     <div class="back">
         <div class="inner">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
+            <slot name="back"></slot>
+            
         </div>
     </div>
 </div>
@@ -46,6 +46,9 @@ pfcTemplate.innerHTML = /* html */`
   background: -webkit-linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
   background: -o-linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
   background: linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
+}
+.front{
+    background-image: var(--front-background-image);
 }
 
 .front:after{
