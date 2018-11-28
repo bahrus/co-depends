@@ -95,4 +95,94 @@ Or you can turn the beautiful css-only implementation into a js-only implementat
 ```
 -->
 
+## Entry 3.  [Parallax Flipping Cards](https://codepen.io/tyrellrummage/pen/wqGgLO)
 
+
+<!--
+```
+<custom-element-demo>
+  <template>
+    <div>
+        <div class="cols">
+            <co-depends-parallax-flip-card id="first">
+                <div slot="front">
+                    <p>Diligord</p>
+                    <span>Lorem ipsum</span>
+                </div>
+                <div slot="back">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit
+                        c.</p>
+                </div>
+            </co-depends-parallax-flip-card>
+            <co-depends-parallax-flip-card id="second">
+                <div slot="front">
+                    <p>Strizzes</p>
+                    <span>Lorem ipsum</span>
+                </div>
+                <div slot="back">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit
+                        c.</p>
+                </div>
+            </co-depends-parallax-flip-card>
+            <co-depends-parallax-flip-card id="third">
+                <div slot="front">
+                    <p>Rocogged</p>
+                    <span>Lorem ipsum</span>
+                </div>
+                <div slot="back">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit
+                        c.</p>
+                </div>
+            </co-depends-parallax-flip-card>
+            <co-depends-parallax-flip-card id="fourth">
+                <div slot="front">
+                    <p>Clossyo</p>
+                    <span>Lorem ipsum</span>
+                </div>
+                <div slot="back">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit
+                        c.</p>
+                </div>
+            </co-depends-parallax-flip-card>
+        </div>
+        <script type="module" src="../parallax-flip-card.js"></script>
+        <style>
+            #first {
+                --front-background-image: url(https://unsplash.it/500/500/);
+            }
+
+            #second {
+                --front-background-image: url(https://unsplash.it/511/511/);
+            }
+
+            #third {
+                --front-background-image: url(https://unsplash.it/502/502/);
+            }
+
+            #fourth {
+                --front-background-image: url(https://unsplash.it/503/503/);
+            }
+
+            .cols {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+            }
+
+            co-depends-parallax-flip-card {
+                width: calc(25% - 2rem);
+                margin: 1rem;
+                cursor: pointer;
+            }
+        </style>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/co-depends@0.0.7/parallax-flip-card/parallax-flip-card.js"></script>
+    </div>
+  </template>
+</custom-element-demo>
+```
+-->
