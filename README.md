@@ -95,7 +95,14 @@ Or you can turn the beautiful css-only implementation into a js-only implementat
 ```
 -->
 
-NB:  To my surprise, the performance of the js version seems to out perform the deframed version in this particular case, when throttling the network and CPU.
+It is quite interesting (to me) to compare the performance using Chrome Tools, with various throttling settings.  I don't know how much of these differences are due to the way the throttling simulation works, vs. what one would see in the field.
+
+<table>
+<thead>
+<tr><th>Scenario</th><th>Network Throttling</th><th>CPU throttling</th><th>First Meaningful Paint</th><th>DOM Loaded</th></tr>
+
+</thead>
+</table>
 
 ## Entry 3.  [Parallax Flipping Cards](https://codepen.io/tyrellrummage/pen/wqGgLO)
 
@@ -188,3 +195,6 @@ NB:  To my surprise, the performance of the js version seems to out perform the 
 </custom-element-demo>
 ```
 -->
+
+## Entry 4.  [CSS-Only Nested Dropdown Navigation (ARIA)](https://codepen.io/gabriellewee/pen/oWyObX)
+
