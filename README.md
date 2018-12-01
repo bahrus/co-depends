@@ -99,10 +99,17 @@ It is quite interesting (to me) to compare the performance using Chrome Tools, w
 
 <table>
 <thead>
-<tr><th>Scenario</th><th>Network Throttling</th><th>CPU throttling</th><th>First Meaningful Paint</th><th>DOM Loaded</th></tr>
-
+<tr><th>Test Case</th><th>Network Throttling</th><th>CPU throttling</th><th>First Meaningful Paint (sec)</th><th>DOM Loaded(sec)</th></tr>
+<tr><td><a href="https://bahrus.github.io/co-depends/css-minesweeper/demo/dev-js.html" target="_blank">Pure JS</a></td><td>Slow 3G</td><td>6x</td><td>6</td><td>9</td></tr>
+<tr><td><a href="https://bahrus.github.io/co-depends/css-minesweeper/demo/dev-js.html" target="_blank">Pure JS</a></td><td>Slow 3G</td><td>4x</td><td>5</td><td>7</td></tr>
+<tr><td><a href="https://bahrus.github.io/co-depends/css-minesweeper/demo/dev-js.html" target="_blank">Pure JS</a></td><td>Slow 3G</td><td>1x</td><td>4.5</td><td>5</td></tr>
+<tr><td><a href="https://bahrus.github.io/co-depends/css-minesweeper/demo/dev.html" target="_blank">Pure Deframed HTML</a></td><td>Slow 3G</td><td>6x</td><td>8</td><td>8</td></tr>
+<tr><td><a href="https://bahrus.github.io/co-depends/css-minesweeper/demo/dev.html" target="_blank">Pure Deframed HTML</a></td><td>Slow 3G</td><td>4x</td><td>3</td><td>5</td></tr>
+<tr><td><a href="https://bahrus.github.io/co-depends/css-minesweeper/demo/dev.html" target="_blank">Pure Deframed HTML</a></td><td>Slow 3G</td><td>1x</td><td>2</td><td>2.5</td></tr>
 </thead>
 </table>
+
+It appears that the pure HTML (deframed version) outperforms when network is highly throttled, but the pure JS has an edge when CPU is highly throttled.
 
 ## Entry 3.  [Parallax Flipping Cards](https://codepen.io/tyrellrummage/pen/wqGgLO)
 
