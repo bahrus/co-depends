@@ -1,7 +1,7 @@
 const inp_label = document.createElement('template');
 inp_label.innerHTML = /* html */ `
       <input type='checkbox'  aria-haspopup='true' role='button' tabindex='1'/>
-      <label class='down' for='link-top' id='menu' role='none' tabindex='-1'></label>
+      <label for='link-top' id='menu' role='none' tabindex='-1'></label>
 `;
 const nestedDD = document.createElement('template');
 nestedDD.innerHTML = /* html */ `
@@ -410,6 +410,12 @@ export class NestedDropDown extends HTMLElement {
         inp.setAttribute('tabIndex', inputTabIndex);
         inp.id = node.data.controlId;
         const lbl = inpLabelCopy.lastElementChild;
+        if (controls === 'nav') {
+            lbl.className = 'down';
+        }
+        else if (node.items) {
+            lbl.className = 'right';
+        }
         lbl.id = node.data.labelId;
         lbl.setAttribute('for', inp.id);
         lbl.innerText = node.data.labelText;
