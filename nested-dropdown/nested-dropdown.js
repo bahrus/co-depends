@@ -1,17 +1,18 @@
 const inp_label = document.createElement('template');
 inp_label.innerHTML = /* html */ `
-      <input type='checkbox' aria-controls='nav' aria-haspopup='true' role='button' tabindex='1'/>
+      <input type='checkbox'  aria-haspopup='true' role='button' tabindex='1'/>
       <label class='down' for='link-top' id='menu' role='none' tabindex='-1'></label>
 `;
 const nestedDD = document.createElement('template');
 nestedDD.innerHTML = /* html */ `
-
-<main ontouchstart='true' role='main'>
-  <nav  role='menu'>
-    <slot name="generator"></slot>
-    <div id="content"></div>
-  </nav>
-</main>
+<slot name="generator"></slot>
+<div class="html">
+  <div class="body">
+    <main ontouchstart='true' role='main'>
+      <nav  role='menu' id="content"></nav>
+    </main>
+  </div>
+</div>
 <style>
     :host{
       display:block;
@@ -32,6 +33,10 @@ nestedDD.innerHTML = /* html */ `
 
   div.body, div.html {
     height: 100%;
+  }
+
+  ol,ul {
+    list-style: none
   }
 
   a {
@@ -389,17 +394,20 @@ export class NestedDropDown extends HTMLElement {
                     hEl.addEventListener('value-changed', innerE => {
                         const val2 = innerE.target.value;
                         console.log(val2);
-                        this.processList(val2.root, target);
+                        this.processList(val2.root, target, 'nav', 'button', '1');
                     });
                     hEl.removeAttribute('disabled');
                 }
             });
         });
     }
-    processList(node, parent) {
+    processList(node, parent, controls, role, inputTabIndex) {
         const inpLabelCopy = inp_label.content.cloneNode(true);
         const inp = inpLabelCopy.firstElementChild;
         inp.setAttribute('aria-labelledby', node.data.labelId);
+        inp.setAttribute('aria-controls', controls);
+        inp.setAttribute('role', role);
+        inp.setAttribute('tabIndex', inputTabIndex);
         inp.id = node.data.controlId;
         const lbl = inpLabelCopy.lastElementChild;
         lbl.id = node.data.labelId;
@@ -414,7 +422,7 @@ export class NestedDropDown extends HTMLElement {
             const li = document.createElement('li');
             li.setAttribute('role', 'none');
             if (item.sublist) {
-                this.processList(item.sublist, li);
+                this.processList(item.sublist, li, 'nest', 'menuitem', '2');
                 // <input aria-controls='nest' aria-haspopup='true' aria-labelledby='shop' id='link-shop' role='menuitem'
                 // tabindex='2' type='checkbox'>
                 // <label class='right' for='link-shop' id='shop' role='none' tabindex='-1'>Shop</label>
@@ -426,6 +434,7 @@ export class NestedDropDown extends HTMLElement {
                     const a = document.createElement('a');
                     a.tabIndex = lnk.tabIndex;
                     a.innerText = lnk.text;
+                    a.setAttribute('role', lnk.role);
                     li.appendChild(a);
                 }
             }
