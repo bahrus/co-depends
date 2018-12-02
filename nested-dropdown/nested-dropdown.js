@@ -420,7 +420,14 @@ export class NestedDropDown extends HTMLElement {
                 // <label class='right' for='link-shop' id='shop' role='none' tabindex='-1'>Shop</label>
             }
             else {
-                li.innerHTML = item.text;
+                //li.innerHTML = item.text;
+                if (item.link) {
+                    const lnk = item.link;
+                    const a = document.createElement('a');
+                    a.tabIndex = lnk.tabIndex;
+                    a.innerText = lnk.text;
+                    li.appendChild(a);
+                }
             }
             ul.appendChild(li);
         });

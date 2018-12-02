@@ -419,13 +419,21 @@ export class NestedDropDown extends HTMLElement {
     node.items.forEach((item : any) =>{
       const li = document.createElement('li');
       li.setAttribute('role', 'none');
+      
       if(item.sublist){
         this.processList(item.sublist, li);
         // <input aria-controls='nest' aria-haspopup='true' aria-labelledby='shop' id='link-shop' role='menuitem'
         // tabindex='2' type='checkbox'>
     // <label class='right' for='link-shop' id='shop' role='none' tabindex='-1'>Shop</label>
       }else{
-        li.innerHTML = item.text;
+        //li.innerHTML = item.text;
+        if(item.link){
+          const lnk = item.link;
+          const a = document.createElement('a');
+          a.tabIndex = lnk.tabIndex;
+          a.innerText = lnk.text;
+          li.appendChild(a);
+        }
       }
       
       ul.appendChild(li);
