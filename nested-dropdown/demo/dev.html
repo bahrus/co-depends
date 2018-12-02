@@ -10,9 +10,29 @@
 
 <body>
     <div>
+        <!-- <litter-g></litter-g> -->
         <co-depends-nested-dropdown>
-            <div slot="main">
-            <input aria-controls='nav' aria-haspopup='true' aria-labelledby='menu' id='link-top' role='button' tabindex='1'
+            <ul id='nav' data-role="menu">
+                <li>Shop
+                    <ul>
+                        <li>Tops</li>
+                    </ul>
+                </li>
+            </ul>
+            <h2o-lilies slot="generator" disabled></h2o-lilies>
+            
+
+        </co-depends-nested-dropdown>
+        <script type="module" src="../nested-dropdown.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/litter-g@0.0.17/dist/litter-g.iife.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/h2o-lilies@0.0.3/dist/h2o-lilies.iife.js"></script> 
+        <script type="module" src="https://cdn.jsdelivr.net/npm/p-d.p-u@0.0.92/dist/p-all.iife.js"></script>
+    </div>
+</body>
+
+</html>
+
+            <!-- <input aria-controls='nav' aria-haspopup='true' aria-labelledby='menu' id='link-top' role='button' tabindex='1'
                 type='checkbox'>
             <label class='down' for='link-top' id='menu' role='none' tabindex='-1'>Menu</label>
             <ul aria-labelledby='menu' id='nav' role='menu'>
@@ -47,11 +67,4 @@
                 <li role='none'>
                     <a role='menuitem' tabindex='4'>Contact</a>
                 </li>
-            </ul>
-        </div>
-        </co-depends-nested-dropdown>
-        <script type="module" src="../nested-dropdown.js"></script>
-    </div>
-</body>
-
-</html>
+            </ul> -->

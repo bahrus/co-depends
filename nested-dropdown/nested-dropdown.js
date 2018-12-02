@@ -1,12 +1,19 @@
-"use strict";
 const nestedDD = document.createElement('template');
 nestedDD.innerHTML = /* html */ `
 <main ontouchstart='true' role='main'>
-  <nav role='menu'>
-  <slot name="main"></slot>
+  <nav  role='menu'>
+    <slot name="generator"></slot>
+    <div id="content">
+      <input aria-controls='nav' aria-haspopup='true' aria-labelledby='menu' id='link-top' role='button' tabindex='1'
+                type='checkbox'>
+      <label class='down' for='link-top' id='menu' role='none' tabindex='-1'>Menu</label>
+    </div>
   </nav>
 </main>
 <style>
+  :host{
+    display:block;
+  }
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -366,11 +373,58 @@ nav > input:not(:checked) ~ ul > li input:checked ~ ul li:nth-child(5) {
 
 </style>
 `;
-class NestedDropDown extends HTMLElement {
+export class NestedDropDown extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(nestedDD.content.cloneNode(true));
+        const target = this.shadowRoot.querySelector('#content');
+        this.shadowRoot.querySelector('[name="generator"]').addEventListener('slotchange', outerE => {
+            const sE = outerE.target;
+            sE.assignedElements().forEach(el => {
+                const hEl = el;
+                if (hEl.hasAttribute('disabled')) {
+                    hEl.addEventListener('value-changed', innerE => {
+                        const val2 = innerE.target.value;
+                        console.log(val2);
+                        target.appendChild(this.processList(val2.root, 'menu'));
+                    });
+                    hEl.removeAttribute('disabled');
+                }
+            });
+        });
+    }
+    processList(node, parentId) {
+        const ul = document.createElement('ul');
+        ul.id = node.id;
+        ul.setAttribute('role', 'menu');
+        ul.setAttribute('aria-labelledby', parentId);
+        node.items.forEach(item => {
+            const li = document.createElement('li');
+            li.setAttribute('role', 'none');
+            if (item.sublist) {
+                const inp = document.createElement('input');
+                inp.id = 'link-' + item.id;
+                inp.setAttribute('aria-controls', 'nest');
+                inp.setAttribute('aria-haspopup', 'true');
+                inp.setAttribute('aria-labelledby', item.text);
+                inp.setAttribute('role', 'menuitem');
+                inp.setAttribute('tabindex', '2'); //TODO
+                li.appendChild(inp);
+                const lbl = document.createElement('label');
+                lbl.classList.add('right');
+                lbl.innerText = item.text;
+                li.appendChild(lbl);
+                // <input aria-controls='nest' aria-haspopup='true' aria-labelledby='shop' id='link-shop' role='menuitem'
+                // tabindex='2' type='checkbox'>
+                // <label class='right' for='link-shop' id='shop' role='none' tabindex='-1'>Shop</label>
+            }
+            else {
+                li.innerHTML = item.text;
+            }
+            ul.appendChild(li);
+        });
+        return ul;
     }
 }
 customElements.define('co-depends-nested-dropdown', NestedDropDown);

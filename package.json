@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/bahrus/co-depends#readme",
   "dependencies": {
-    "xtal-latx": "0.0.79",
+    "xtal-latx": "0.0.82",
     "deframe": "0.0.10"
   },
   "devDependencies": {
