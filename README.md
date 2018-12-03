@@ -126,7 +126,7 @@ It appears that the pure HTML (deframed version) outperforms when network is hig
                     <span>Lorem ipsum</span>
                 </div>
                 <div slot="back">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit
+                    <p>Alias cum repellat velit quae suscipit
                         c.</p>
                 </div>
             </co-depends-parallax-flip-card>
@@ -136,7 +136,7 @@ It appears that the pure HTML (deframed version) outperforms when network is hig
                     <span>Lorem ipsum</span>
                 </div>
                 <div slot="back">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit
+                    <p>Alias cum repellat velit quae suscipit
                         c.</p>
                 </div>
             </co-depends-parallax-flip-card>
@@ -146,7 +146,7 @@ It appears that the pure HTML (deframed version) outperforms when network is hig
                     <span>Lorem ipsum</span>
                 </div>
                 <div slot="back">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit
+                    <p>Alias cum repellat velit quae suscipit
                         c.</p>
                 </div>
             </co-depends-parallax-flip-card>
@@ -156,7 +156,7 @@ It appears that the pure HTML (deframed version) outperforms when network is hig
                     <span>Lorem ipsum</span>
                 </div>
                 <div slot="back">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit
+                    <p>Alias cum repellat velit quae suscipit
                         c.</p>
                 </div>
             </co-depends-parallax-flip-card>
@@ -205,3 +205,39 @@ It appears that the pure HTML (deframed version) outperforms when network is hig
 
 ## Entry 4.  [CSS-Only Nested Dropdown Navigation (ARIA)](https://codepen.io/gabriellewee/pen/oWyObX)  WIP
 
+<!--
+```
+<custom-element-demo>
+  <template>
+    <div style="height:100%">
+        <co-depends-nested-dropdown style="height:100%">
+            <ul id='nav' data-role="menu" data-control-id="link-top" data-label-id="menu" data-label-text="Menu">
+                <li>
+                    <ul id="nest" data-role="menu" data-control-id="link-shop" data-label-id="shop" data-label-text="Shop">
+                        <li><a role='menuitem' tabindex='3'>Tops </a></li>
+                        <li><a role='menuitem' tabindex='3'>Bottoms </a></li>
+                        <li><a role='menuitem' tabindex='3'>Shoes </a></li>
+                        <li><a role='menuitem' tabindex='3'>Accessories </a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a role='menuitem' tabindex='4'>Blog</a>
+                </li>
+                <li>
+                    <a role='menuitem' tabindex='4'>About</a>
+                </li>
+                <li>
+                    <a role='menuitem' tabindex='4'>Contact</a>
+                </li>
+            </ul>
+            <h2o-lilies slot="generator" disabled></h2o-lilies>
+
+
+        </co-depends-nested-dropdown>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/co-depends/nested-dropdown/dist/nested-dropdown.iife.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/h2o-lilies@0.0.6/dist/h2o-lilies.iife.js"></script>
+    </div>
+  </template>
+</custom-element-demo>
+```
+-->
