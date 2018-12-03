@@ -422,7 +422,7 @@ export class NestedDropDown extends HTMLElement {
     }else if(node.items){
       lbl.className = 'right';
     }
-    lbl!.id = node.data.labelId;
+    lbl!.id = node.id + '_lbl';
     lbl!.setAttribute('for', inp!.id);
     lbl!.innerText = node.data.labelText;
     parent.appendChild(inpLabelCopy);
@@ -446,7 +446,7 @@ export class NestedDropDown extends HTMLElement {
           const a = document.createElement('a');
           a.tabIndex = lnk.tabIndex;
           a.innerText = lnk.text;
-          a.setAttribute('role', lnk.role);
+          a.setAttribute('role', 'menuitem');
           li.appendChild(a);
         }
       }
