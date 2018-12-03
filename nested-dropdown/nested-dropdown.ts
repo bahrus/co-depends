@@ -1,4 +1,4 @@
-import { XtallatX } from 'xtal-latx/xtal-latx.js';
+//import { XtallatX } from 'xtal-latx/xtal-latx.js';
 
 const inp_label = document.createElement('template');
 inp_label.innerHTML = /* html */`
