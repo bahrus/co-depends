@@ -37,7 +37,8 @@ nestedDD.innerHTML = /* html */ `
   }
 
   ol,ul {
-    list-style: none
+    list-style: none;
+    padding-inline-start:0px;
   }
 
   a {

@@ -1,7 +1,8 @@
 
     //@ts-check
     (function () {
-    const inp_label = document.createElement('template');
+    //import { XtallatX } from 'xtal-latx/xtal-latx.js';
+const inp_label = document.createElement('template');
 inp_label.innerHTML = /* html */ `
       <input type='checkbox'  aria-haspopup='true' role='button' tabindex='1'/>
       <label for='link-top' id='menu' role='none' tabindex='-1'></label>
@@ -39,7 +40,8 @@ nestedDD.innerHTML = /* html */ `
   }
 
   ol,ul {
-    list-style: none
+    list-style: none;
+    padding-inline-start:0px;
   }
 
   a {
