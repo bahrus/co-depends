@@ -415,7 +415,7 @@ export class NestedDropDown extends HTMLElement {
     inp!.setAttribute('aria-controls', controls);
     inp!.setAttribute('role', role);
     inp!.setAttribute('tabIndex', inputTabIndex);
-    inp!.id = node.data.controlId;
+    inp!.id = node.id + '_chkbox';
     const lbl = inpLabelCopy.lastElementChild as HTMLLabelElement;
     if(controls === 'nav'){
       lbl.className = 'down';
