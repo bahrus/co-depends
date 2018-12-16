@@ -203,7 +203,7 @@ It appears that the pure HTML (deframed version) outperforms when network is hig
 ```
 -->
 
-## Entry 4.  [CSS-Only Nested Dropdown Navigation (ARIA)](https://codepen.io/gabriellewee/pen/oWyObX)  
+## Entry 4.  [CSS-Only Nested Dropdown Navigation (ARIA)](https://codepen.io/gabriellewee/pen/oWyObX)  WIP
 
 <!--
 ```
@@ -242,12 +242,3 @@ It appears that the pure HTML (deframed version) outperforms when network is hig
 ```
 -->
 
-One of the principles / goals guiding these web components is to honor the original example, by minimizing the amount of change required to the original implementation, in the process of converting the demo into a functioning web component.  This particular example raises some sticky issues, issues I've encountered before, and is worthwhile exploring how best to handle.
-
-It's possible that if one were to create a nested dropdown web component from the ground up, one would first define a standalone menu item web component, and then another menu container web component that accepts those standalone menu items as light children.
-
-However, I'm not convinced that taking this example as is, it would have been very easy to do that.  In order to eliminate all JavaScript in codepen, the author made clever use of the \<input type="checkbox" \>.  The point is the author created a coherent ensemble of html / css, which might not work proparly if the ensemble is sliced and diced into separate web components.
-
-So that raises the interesting question of how to support what has to be a non-static list of light children, which get fully adopted into actual children inside the Shadow DOM of the web component.  
-
-The implementation of that is still in flux a bit.  More to follow.
