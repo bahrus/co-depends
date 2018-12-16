@@ -246,7 +246,7 @@ It appears that the pure HTML (deframed version) outperforms when network is hig
 
 <!--
 ```
-<custom-element-demo>
+<custom-element-demo style="height:400px">
   <template>
           <co-depends-simple-text-animation-js>
             <span slot="top">Make</span>
