@@ -203,7 +203,7 @@ It appears that the pure HTML (deframed version) outperforms when network is hig
 ```
 -->
 
-## Entry 4.  [CSS-Only Nested Dropdown Navigation (ARIA)](https://codepen.io/gabriellewee/pen/oWyObX)  WIP
+## Entry 4. **WIP**  [CSS-Only Nested Dropdown Navigation (ARIA)](https://codepen.io/gabriellewee/pen/oWyObX)  
 
 <!--
 ```
@@ -242,3 +242,21 @@ It appears that the pure HTML (deframed version) outperforms when network is hig
 ```
 -->
 
+## Entry 5.  [Simple Text Animation](https://codepen.io/yemon/pen/pWoROm)
+
+<!--
+```
+<custom-element-demo>
+  <template>
+          <co-depends-simple-text-animation-js>
+            <span slot="top">Make</span>
+            <span slot="middleTop">wOrK</span>
+            <span slot="middleMiddle">lifeStyle</span>
+            <span slot="middleBottom">Everything</span>
+            <span slot="bottom">AweSoMe!</span>
+        </co-depends-simple-text-animation-js>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/co-depends@0.0.13/simple-text-animation/simple-text-animation.js"></script>
+  </template>
+</custom-element-demo>
+```
+-->
