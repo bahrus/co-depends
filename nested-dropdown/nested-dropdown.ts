@@ -1,17 +1,20 @@
 //import { XtallatX } from 'xtal-latx/xtal-latx.js';
 
-const inp_label = document.createElement('template');
-inp_label.innerHTML = /* html */`
-      <input type='checkbox'  aria-haspopup='true' role='button' tabindex='1'/>
-      <label for='link-top' id='menu' role='none' tabindex='-1'></label>
-`;
+//Derived from https://codepen.io/gabriellewee/pen/oWyObX
+
+// const inp_label = document.createElement('template');
+// inp_label.innerHTML = /* html */`
+//       <input type='checkbox'  aria-haspopup='true' role='button' tabindex='1'/>
+//       <label for='link-top' id='menu' role='none' tabindex='-1'></label>
+// `;
 
 const nestedDD = document.createElement('template');
 nestedDD.innerHTML = /* html */`
-<slot name="generator"></slot>
+
 <div class="html">
   <div class="body">
     <main ontouchstart='true' role='main'>
+      <slot name="template"></slot>
       <nav  role='menu' id="content"></nav>
     </main>
   </div>
@@ -392,71 +395,17 @@ export class NestedDropDown extends HTMLElement {
     this.shadowRoot!.appendChild(nestedDD.content.cloneNode(true));
     const target = this.shadowRoot!.querySelector('#content');
 
-    this.shadowRoot!.querySelector('[name="generator"]')!.addEventListener('slotchange', outerE => {
+    this.shadowRoot!.querySelector('[name="template"]')!.addEventListener('slotchange', outerE => {
       const sE = outerE.target as HTMLSlotElement;
       sE.assignedElements().forEach(el => {
-        const hEl = el as HTMLInputElement;
-        if (hEl.hasAttribute('disabled')) {
-          hEl.addEventListener('value-changed', innerE => {
-            const val2 = (<any>innerE.target!).value;
-            console.log(val2);
-            this.processList(val2.root, target! as HTMLElement, 'nav', 'button', '1');
-          });
-          hEl.removeAttribute('disabled');
-        }
-
+        const t = el as HTMLTemplateElement;
+        const c = this.shadowRoot!.querySelector('#content') as HTMLDivElement;
+        c.innerHTML = '';
+        c.appendChild(t.content.cloneNode(true));
       })
     });
   }
-  processList(node: any, parent: HTMLElement, controls: string, role: string, inputTabIndex: string) {
-    const inpLabelCopy = inp_label.content.cloneNode(true) as HTMLElement;
-    const inp = inpLabelCopy.firstElementChild;
-    inp!.setAttribute('aria-labelledby', node.data.labelId);
-    inp!.setAttribute('aria-controls', controls);
-    inp!.setAttribute('role', role);
-    inp!.setAttribute('tabIndex', inputTabIndex);
-    inp!.id = node.id + '_chkbox';
-    const lbl = inpLabelCopy.lastElementChild as HTMLLabelElement;
-    if(controls === 'nav'){
-      lbl.className = 'down';
-    }else if(node.items){
-      lbl.className = 'right';
-    }
-    lbl!.id = node.id + '_lbl';
-    lbl!.setAttribute('for', inp!.id);
-    lbl!.innerText = node.data.labelText;
-    parent.appendChild(inpLabelCopy);
-    const ul = document.createElement('ul');
-    ul.id = node.id;
-    ul.setAttribute('role', 'menu');
-    ul.setAttribute('aria-labelledby', lbl!.id);
-    node.items.forEach((item: any) => {
-      const li = document.createElement('li');
-      li.setAttribute('role', 'none');
 
-      if (item.sublist) {
-        this.processList(item.sublist, li, 'nest', 'menuitem', '2');
-        // <input aria-controls='nest' aria-haspopup='true' aria-labelledby='shop' id='link-shop' role='menuitem'
-        // tabindex='2' type='checkbox'>
-        // <label class='right' for='link-shop' id='shop' role='none' tabindex='-1'>Shop</label>
-      } else {
-        //li.innerHTML = item.text;
-        if (item.link) {
-          const lnk = item.link;
-          const a = document.createElement('a');
-          a.tabIndex = lnk.tabIndex;
-          a.innerText = lnk.text;
-          a.setAttribute('role', 'menuitem');
-          li.appendChild(a);
-        }
-      }
-
-      ul.appendChild(li);
-    })
-
-
-    parent.appendChild(ul);
-  }
 }
 customElements.define('co-depends-nested-dropdown', NestedDropDown);
 
