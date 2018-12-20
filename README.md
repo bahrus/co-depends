@@ -203,7 +203,7 @@ It appears that the pure HTML (deframed version) outperforms when network is hig
 ```
 -->
 
-## Entry 4. **WIP**  [CSS-Only Nested Dropdown Navigation (ARIA)](https://codepen.io/gabriellewee/pen/oWyObX)  
+## Entry 4. [CSS-Only Nested Dropdown Navigation (ARIA)](https://codepen.io/gabriellewee/pen/oWyObX)  
 
 <!--
 ```
@@ -211,31 +211,45 @@ It appears that the pure HTML (deframed version) outperforms when network is hig
   <template>
     <div style="height:100%">
         <co-depends-nested-dropdown style="height:100%">
-            <ul id='nav' data-role="menu" data-control-id="link-top" data-label-id="menu" data-label-text="Menu">
-                <li>
-                    <ul id="nest" data-role="menu" data-control-id="link-shop" data-label-id="shop" data-label-text="Shop">
-                        <li><a role='menuitem' tabindex='3'>Tops </a></li>
-                        <li><a role='menuitem' tabindex='3'>Bottoms </a></li>
-                        <li><a role='menuitem' tabindex='3'>Shoes </a></li>
-                        <li><a role='menuitem' tabindex='3'>Accessories </a></li>
+            <template slot="template">
+                <input aria-controls='nav' aria-haspopup='true' aria-labelledby='menu' id='link-top' role='button' tabindex='1' type='checkbox'>
+                <label class='down' for='link-top' id='menu' role='none' tabindex='-1'>Menu</label>
+                <ul aria-labelledby='menu' id='nav' role='menu'>
+                  <li role='none'>
+                    <input aria-controls='nest' aria-haspopup='true' aria-labelledby='shop' id='link-shop' role='menuitem' tabindex='2' type='checkbox'>
+                    <label class='right' for='link-shop' id='shop' role='none' tabindex='-1'>Shop</label>
+                    <ul aria-labelledby='shop' id='nest' role='menu'>
+                      <li role='none'>
+                        <a role='menuitem' tabindex='3'>Tops</a>
+                      </li>
+                      <li role='none'>
+                        <a role='menuitem' tabindex='3'>Bottoms</a>
+                      </li>
+                      <li role='none'>
+                        <a role='menuitem' tabindex='3'>Shoes</a>
+                      </li>
+                      <li role='none'>
+                        <a role='menuitem' tabindex='3'>Accessories</a>
+                      </li>
+                      <li role='none'>
+                        <a role='menuitem' tabindex='3'>Sale</a>
+                      </li>
                     </ul>
-                </li>
-                <li>
+                  </li>
+                  <li role='none'>
                     <a role='menuitem' tabindex='4'>Blog</a>
-                </li>
-                <li>
+                  </li>
+                  <li role='none'>
                     <a role='menuitem' tabindex='4'>About</a>
-                </li>
-                <li>
+                  </li>
+                  <li role='none'>
                     <a role='menuitem' tabindex='4'>Contact</a>
-                </li>
-            </ul>
-            <h2o-lilies slot="generator" disabled></h2o-lilies>
-
-
+                  </li>
+                </ul>
+            </template>
         </co-depends-nested-dropdown>
-        <script type="module" src="https://cdn.jsdelivr.net/npm/co-depends@0.0.12/nested-dropdown/dist/nested-dropdown.iife.js"></script>
-        <script type="module" src="https://cdn.jsdelivr.net/npm/h2o-lilies@0.0.6/dist/h2o-lilies.iife.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/co-depends@0.0.16/nested-dropdown/dist/nested-dropdown.iife.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/h2o-lilies@0.0.8/dist/h2o-lilies.iife.js"></script>
     </div>
   </template>
 </custom-element-demo>
