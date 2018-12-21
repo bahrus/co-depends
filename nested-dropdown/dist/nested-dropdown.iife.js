@@ -395,7 +395,7 @@ class NestedDropDown extends HTMLElement {
         const target = this.shadowRoot.querySelector('#content');
         this.shadowRoot.querySelector('[name="template"]').addEventListener('slotchange', outerE => {
             const sE = outerE.target;
-            sE.assignedElements().forEach(el => {
+            sE.assignedNodes().forEach(el => {
                 const t = el;
                 const c = this.shadowRoot.querySelector('#content');
                 c.innerHTML = '';
