@@ -248,8 +248,7 @@ It appears that the pure HTML (deframed version) outperforms when network is hig
                 </ul>
             </template>
         </co-depends-nested-dropdown>
-        <script type="module" src="https://cdn.jsdelivr.net/npm/co-depends@0.0.16/nested-dropdown/dist/nested-dropdown.iife.js"></script>
-        <script type="module" src="https://cdn.jsdelivr.net/npm/h2o-lilies@0.0.8/dist/h2o-lilies.iife.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/co-depends@0.0.18/nested-dropdown/dist/nested-dropdown.iife.js"></script>
     </div>
   </template>
 </custom-element-demo>
