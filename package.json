@@ -18,7 +18,7 @@
   "homepage": "https://github.com/bahrus/co-depends#readme",
   "dependencies": {
     "xtal-latx": "0.0.82",
-    "deframe": "0.0.10",
+    "deframe": "0.0.22",
     "h2h-tf": "0.0.3"
   },
   "devDependencies": {
