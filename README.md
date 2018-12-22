@@ -1,5 +1,7 @@
 # co-depends
 
+<a href="https://nodei.co/npm/co-depends/"><img src="https://nodei.co/npm/co-depends.png"></a>
+
 co-depends is a suite of web components based on code-pen entries.
 
 ## Entry 1.  [Text Scramble](https://codepen.io/soulwire/pen/mErPAK)
