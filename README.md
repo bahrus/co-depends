@@ -282,7 +282,7 @@ Available in [deframed version](https://www.webcomponents.org/element/deframe), 
 ```
 <custom-element-demo>
   <template>
-        <script type="module" src="https://cdn.jsdelivr.net/npm/co-depends@0.0.19/responsive-honeycomb/responsive-honeycomb-js.js"></script>
+        <script type="module" src="https://unpkg.com/co-depends@0.0.19/responsive-honeycomb/responsive-honeycomb-js.js?module"></script>
         <co-depends-responsive-honeycomb-js>
             <template slot="template">
                 <ul class="honeycomb" lang="es">
