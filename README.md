@@ -324,3 +324,18 @@ Available in [deframed version](https://www.webcomponents.org/element/deframe), 
 </custom-element-demo>
 ```
 -->
+
+## Entry 7.  [Square In a Circle](https://codepen.io/raymondyang/pen/eWGewE)
+
+Available in [deframed version](https://www.webcomponents.org/element/deframe), or the slower js version:
+
+<!--
+```
+<custom-element-demo>
+  <template>
+    <co-depends-square-circle-js></co-depends-square-circle-js>
+    <script type="module" src="https://unpkg.com/co-depends@0.0.21/square-circle/square-circle.js"></script>
+ </template>
+</custom-element-demo>
+```
+-->
