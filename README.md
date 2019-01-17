@@ -349,7 +349,7 @@ Available in [deframed version](https://www.webcomponents.org/element/deframe), 
 <custom-element-demo>
   <template>
     <co-depends-periodic-table-js></co-depends-periodic-table-js>
-    <script type="module" src="https://unpkg.com/co-depends@0.0.22/periodic-table/periodic-table.js"></script>
+    <script type="module" src="https://unpkg.com/co-depends@0.0.22/periodic-table/periodic-table.js?module"></script>
  </template>
 </custom-element-demo>
 ```
