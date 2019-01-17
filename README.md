@@ -339,3 +339,18 @@ Available in [deframed version](https://www.webcomponents.org/element/deframe), 
 </custom-element-demo>
 ```
 -->
+
+## Entry 8.  [Periodic Table](https://codepen.io/mikegolus/pen/OwrPgB)
+
+Available in [deframed version](https://www.webcomponents.org/element/deframe), or the slower js version:
+
+<!--
+```
+<custom-element-demo>
+  <template>
+    <co-depends-periodic-table-js></co-depends-periodic-table-js>
+    <script type="module" src="https://unpkg.com/co-depends@0.0.22/periodic-table/periodic-table.js"></script>
+ </template>
+</custom-element-demo>
+```
+-->
