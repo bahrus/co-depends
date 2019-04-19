@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="module">
+        function deframe(e, t) { document.querySelectorAll('link[as="script"]').forEach(t => { const o = top.document.createElement("script"); o.src = t.href, Array.from(t.attributes).forEach(e => { o.setAttribute(e.name, e.value) }), e.document.head.appendChild(o) }); e.customElements.define(t, class extends e.HTMLElement { constructor() { super(), this.attachShadow({ mode: "open" }); const e = document.body.firstElementChild; this.shadowRoot.appendChild(e.content.cloneNode(!0)), this.shadowRoot.querySelector("#content"), this.shadowRoot.querySelector('[name="template"]').addEventListener("slotchange", e => { e.target.assignedNodes().forEach(e => { const t = e, o = this.shadowRoot.querySelector("#content"); o.innerHTML = "", o.appendChild(t.content.cloneNode(!0)) }) }) } }) }
+        deframe(top, 'co-depends-css-bar-chart');
+    </script>
+</head>
+
+<body>
+    <template>
+        <dl class="chart">
+
+            <dt class="date">2000</dt>
+            <dd class="bar" style="--start: 56;">
+                <span class="value">45%</span>
+            </dd>
+
+            <dt class="date">2001</dt>
+            <dd class="bar" style="--start: 1;">
+                <span class="value">100%</span>
+            </dd>
+
+            <dt class="date">2002</dt>
+            <dd class="bar" style="--start: 38;">
+                <span class="value">63%</span>
+            </dd>
+
+            <dt class="date">2003</dt>
+            <dd class="bar" style="--start: 90;">
+                <span class="value">11%</span>
+            </dd>
+
+            <dt class="date">2004</dt>
+            <dd class="bar" style="--start: 55;">
+                <span class="value">46%</span>
+            </dd>
+
+            <dt class="date">2005</dt>
+            <dd class="bar" style="--start: 13;">
+                <span class="value">88%</span>
+            </dd>
+
+            <dt class="date">2006</dt>
+            <dd class="bar" style="--start: 66;">
+                <span class="value">35%</span>
+            </dd>
+
+            <dt class="date">2007</dt>
+            <dd class="bar" style="--start: 96;">
+                <span class="value">5%</span>
+            </dd>
+
+            <dt class="date">2008</dt>
+            <dd class="bar" style="--start: 23;">
+                <span class="value">78%</span>
+            </dd>
+
+            <dt class="date">2009</dt>
+            <dd class="bar" style="--start: 10;">
+                <span class="value">91%</span>
+            </dd>
+
+            <dt class="date">2010</dt>
+            <dd class="bar" style="--start: 46;">
+                <span class="value">55%</span>
+            </dd>
+
+            <dt class="date">2011</dt>
+            <dd class="bar" style="--start: 85;">
+                <span class="value">16%</span>
+            </dd>
+
+        </dl>
+        <style>
+            .chart {
+                --scale: 100;
+
+                /* Setup the grid */
+                display: grid;
+                grid-auto-columns: 1fr;
+                grid-template-rows: repeat(var(--scale), minmax(0, 1fr)) 1.4rem;
+                grid-column-gap: 5px;
+
+                /* Generate background guides */
+                /* (sub-pixel rounding errors make this imperfect) */
+                --line-every: 10;
+                background-image: linear-gradient(to bottom, #ccc 1px, transparent 1px);
+                background-size: 100% calc((100% - 1.4rem) / var(--scale) * var(--line-every));
+
+                /* other styles… */
+                margin: 2em auto 1em;
+                padding: 0 1em;
+                position: relative;
+                max-width: 70vw;
+                height: calc(100vh - 3em);
+            }
+
+            .chart::after {
+                background: #fff;
+                bottom: 0;
+                content: ' ';
+                height: 1.4rem;
+                left: 0;
+                position: absolute;
+                right: 0;
+            }
+
+
+            /* Dates… */
+            /* ------ */
+
+            .date {
+                align-items: center;
+                display: flex;
+                font-weight: bold;
+                grid-row-start: -2;
+                justify-content: center;
+                text-align: center;
+                z-index: 2;
+            }
+
+
+            /* Each bar on the graph… */
+            /* ---------------------- */
+
+            .bar {
+                grid-row: var(--start) / -2;
+
+                /* Background-Color */
+                background-image: linear-gradient(to right, green, yellow, orange, red);
+                background-size: 1600% 100%;
+                background-position: calc(var(--start) * 1%) 0;
+
+                /* Other styles… */
+                border-radius: 5px 5px 0 0;
+                color: #000;
+                list-style: none;
+                position: relative;
+            }
+
+            .value {
+                background: #fff;
+                bottom: 100%;
+                display: inline-block;
+                left: 50%;
+                padding: 0 0.4em;
+                position: absolute;
+                transform: translate(-50%, -1px);
+            }
+
+
+            /* Global helpers… */
+            /* --------------- */
+
+            :root {
+                font-size: 80%;
+                font-family: sans-serif;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+        </style>
+        <slot name="template"></slot>
+        <div class="body" id="content"></div>
+    </template>
+</body>
+
+</html>
