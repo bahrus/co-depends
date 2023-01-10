@@ -1,26 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Honeycomb</title>
-    <script type="module">
-        function deframe(e,t){document.querySelectorAll('link[as="script"]').forEach(t=>{const o=top.document.createElement("script");o.src=t.href,Array.from(t.attributes).forEach(e=>{o.setAttribute(e.name,e.value)}),e.document.head.appendChild(o)});e.customElements.define(t,class extends e.HTMLElement{constructor(){super(),this.attachShadow({mode:"open"});const e=document.body.firstElementChild;this.shadowRoot.appendChild(e.content.cloneNode(!0)),this.shadowRoot.querySelector("#content"),this.shadowRoot.querySelector('[name="template"]').addEventListener("slotchange",e=>{e.target.assignedNodes().forEach(e=>{const t=e,o=this.shadowRoot.querySelector("#content");o.innerHTML="",o.appendChild(t.content.cloneNode(!0))})})}})}
-        deframe(top, 'co-depends-responsive-honeycomb');
-    </script>
-</head>
-
-<body>
-    <template>
-        <style>
+<responsive-honeycomb>
+    <template shadowroot=open><!--begin--><!--begin-->
+        <template>
+            <style>
+                @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+            </style>
+        </template>
+        <style adopt>
+            :host[hidden]{
+                display: none;
+            }
             :host {
                 display: block;
             }
-
-            
-
             .body {
                 font-family: 'Montserrat', sans-serif;
                 background: #3ea0eb;
@@ -185,7 +176,12 @@
         </style>
         <slot name="template"></slot>
         <div class="body" id="content"></div>
-    </template>
-</body>
-
-</html>
+        <be-hive></be-hive>
+        <script id=shared-xtal-fig-diamond nomodule be-having>
+            export const make=['xtal-fig/diamond/make.js', 'https://esm.run/xtal-fig@0.0.24/diamond/make.js'];
+            export const definitive = {
+                impl: ['be-definitive/be-definitive.js', 'https://esm.run/be-definitive@0.0.88']
+            }
+        </script>
+    <!--end--><!--end--></template>
+</responsive-honeycomb>
