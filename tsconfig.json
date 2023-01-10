@@ -7,9 +7,10 @@
 		"strict": true,
 		"newLine": "LF"
 	},
+	"files": [
+		"response-honeycomb/make.ts"
+	],
 	"exclude":[
-		"build",
-		"bower_components",
 		"node_modules"
 	]
 

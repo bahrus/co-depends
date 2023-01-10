@@ -4,7 +4,9 @@
   "description": "TBD",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "package-check": "package-check",
+    "serve": "node node_modules/may-it-serve/serve.js"
   },
   "repository": {
     "type": "git",
@@ -17,11 +19,13 @@
   },
   "homepage": "https://github.com/bahrus/co-depends#readme",
   "dependencies": {
-    "xtal-latx": "0.0.82",
-    "deframe": "0.0.22",
-    "h2h-tf": "0.0.3"
+    "trans-render": "0.0.659",
+    "xtal-element": "0.0.551",
+    "be-importing": "0.0.53",
+    "be-definitive": "0.0.89" 
   },
   "devDependencies": {
-    "jiife": "0.0.8"
+    "@skypack/package-check": "0.2.2",
+    "may-it-serve": "0.0.4"
   }
 }
