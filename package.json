@@ -19,9 +19,10 @@
   },
   "homepage": "https://github.com/bahrus/co-depends#readme",
   "dependencies": {
-    "trans-render": "0.0.659",
-    "xtal-element": "0.0.551",
-    "be-importing": "0.0.53",
+    "trans-render": "0.0.660",
+    "xtal-element": "0.0.552",
+    "be-ferried": "0.0.44",
+    "be-importing": "0.0.55",
     "be-definitive": "0.0.89" 
   },
   "devDependencies": {
