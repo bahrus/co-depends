@@ -6,7 +6,8 @@ export const make = {
     slot: {
         be: 'ferried',
         having: {
-            xsltHref: 'co-depends/responsive-honeycomb/ferry.xslt'
+            xsltHref: 'co-depends/responsive-honeycomb/ferry.xslt',
+            debug: true,
         }
     }
 };

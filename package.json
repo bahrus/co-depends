@@ -21,7 +21,7 @@
   "dependencies": {
     "trans-render": "0.0.660",
     "xtal-element": "0.0.552",
-    "be-ferried": "0.0.44",
+    "be-ferried": "0.0.45",
     "be-importing": "0.0.55",
     "be-definitive": "0.0.89" 
   },
