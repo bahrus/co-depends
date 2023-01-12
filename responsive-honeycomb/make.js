@@ -7,8 +7,7 @@ export const make = {
         be: 'ferried',
         having: {
             xsltHref: 'co-depends/responsive-honeycomb/ferry.xslt',
-            debug: true,
+            //debug: true,
         }
     }
 };
-//# sourceMappingURL=make.js.map
