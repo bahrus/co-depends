@@ -7,6 +7,9 @@ export const make = {
                     vertical: false,
                     hydratingTransform: {
                         directionToggleId: [, { click: { prop: 'vertical', toggleProp: true } }]
+                    },
+                    transform: {
+                        directionToggleId: [, , { '.toggle--vertical': 'vertical' }]
                     }
                 }
             }
