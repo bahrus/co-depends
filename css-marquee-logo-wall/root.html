@@ -364,6 +364,42 @@
                 </defs>
             </svg>
         </div>
+        <be-hive></be-hive>
+        <script id=shared-co-depends-css-marquee-logo-wall nomodule be-having>
+            export const make=['co-depends/css-marquee-logo-wall/make.js', 'https://esm.run/co-depends@0.0.24/css-marquee-logo-wall/make.js'];
+            export const definitive = {
+                impl: ['be-definitive/be-definitive.js', 'https://esm.run/be-definitive@0.0.89']
+            };
+        </script>
         <!--end--><!--end-->
     </template>
 </css-marquee-logo-wall>
+
+<script type=importmap>
+    {
+        "imports": {
+            
+            "be-based/": "../../node_modules/be-based/",
+            "be-decorated/": "../../node_modules/be-decorated/",
+            "be-definitive/": "../../node_modules/be-definitive/",
+            "be-exportable/": "../../node_modules/be-exportable/",
+            "be-ferried/": "../../node_modules/be-ferried/",
+            "be-having/": "../../node_modules/be-having/",
+            "be-hive/": "../../node_modules/be-hive/",
+            "be-importing/": "../../node_modules/be-importing/",
+            "be-written/": "../../node_modules/be-written/",
+            "stream-orator/": "../../node_modules/stream-orator/",
+            "trans-render/": "../../node_modules/trans-render/",
+            "xtal-element/": "../../node_modules/xtal-element/",
+            "co-depends/": "../../"
+        }
+    }
+</script>
+<script type=module>
+    if(customElements.get('be-importing') === undefined){
+        import('be-importing/be-importing.js').catch(err => {
+            console.debug(err);
+            import('https://esm.run/be-importing@0.0.55');
+        });
+    }
+</script>

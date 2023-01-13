@@ -9,7 +9,8 @@
 	},
 	"files": [
 		"responsive-honeycomb/make.ts",
-		"nested-dropdown/make.ts"
+		"nested-dropdown/make.ts",
+		"css-marquee-logo-wall/make.ts"
 	],
 	"exclude":[
 		"node_modules"
