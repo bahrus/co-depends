@@ -13,7 +13,9 @@ export const make = {
                         directionToggleId:[,{click:{prop: 'vertical', toggleProp: true}}]
                     },
                     transform: {
-                        directionToggleId: [,,{'.toggle--vertical': 'vertical'}]
+                        directionToggleId: [,,{'.toggle--vertical': 'vertical'}],
+                        wrapperC: [,,{'.wrapper--vertical': 'vertical'}],
+                        marqueeCss: [,,{'.marquee--vertical': 'vertical'}]
                     }
                 }
             }
