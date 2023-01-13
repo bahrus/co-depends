@@ -8,7 +8,6 @@
 
     <xsl:template match="img-ish">
         <li class="honeycomb-cell">
-            <!-- <xsl:copy-of select="."/> -->
             <img class="honeycomb-cell__image" src="{@src}" alt="{@alt}"/>
             <div class="honeycomb-cell__title"><xsl:value-of select="@alt"/></div>
         </li>

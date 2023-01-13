@@ -354,3 +354,5 @@ Available in [deframed version](https://www.webcomponents.org/element/deframe), 
 </custom-element-demo>
 ```
 -->
+
+## Entry 10.  [CSS Marquee Logo Wall](https://codepen.io/hexagoncircle/pen/wvmjomb)

@@ -8,7 +8,8 @@
 		"newLine": "LF"
 	},
 	"files": [
-		"responsive-honeycomb/make.ts"
+		"responsive-honeycomb/make.ts",
+		"nested-dropdown/make.ts"
 	],
 	"exclude":[
 		"node_modules"
