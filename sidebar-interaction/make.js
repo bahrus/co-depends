@@ -9,10 +9,13 @@ export const make = {
                     isShrinkView: false,
                     hydratingTransform: {
                         viewButtonP: [, { click: { prop: 'isShrinkView', toggleProp: true } }]
+                    },
+                    transform: {
+                        sidebarContainerP: [, , { '.shrink': 'isShrinkView' }]
                     }
                 }
             }
-        }
+        },
     },
     templateE: {
         be: 'headed',

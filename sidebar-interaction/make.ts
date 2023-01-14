@@ -14,10 +14,13 @@ export const make = {
                     isShrinkView: false,
                     hydratingTransform: {
                         viewButtonP: [,{click: {prop: 'isShrinkView', toggleProp: true}}]
+                    },
+                    transform: {
+                        sidebarContainerP: [,,{'.shrink': 'isShrinkView'}]
                     }
                 }
             }
-        } as BeDefEUP<Props & TemplMgmtProps<Props>,
+        } as BeDefEUP<Props & TemplMgmtProps<Props>>,
     },
     templateE: {
         be: 'headed',
