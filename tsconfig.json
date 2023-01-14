@@ -11,7 +11,8 @@
 		"responsive-honeycomb/make.ts",
 		"nested-dropdown/make.ts",
 		"css-marquee-logo-wall/make.ts",
-		"animated-star-rating/make.ts"
+		"animated-star-rating/make.ts",
+		"sidebar-interaction/make.ts"
 	],
 	"exclude":[
 		"node_modules"
