@@ -9,8 +9,12 @@
                     margin: 0;
                     padding: 0;
                 }
-
+                :host[hidden]{
+                    display:none;
+                }
                 :host {
+                    display:block;
+
                     --bg: #e3e4e8;
                     --fg: #17181c;
                     --primary: #255ff4;
@@ -26,7 +30,7 @@
                     color: var(--fg);
                     font: 1em/1.5 "DM Sans", sans-serif;
                     display: flex;
-                    height: 100vh;
+                    /* height: 100vh; */
                     transition: background-color var(--trans-dur), color var(--trans-dur);
                 }
 
