@@ -1,5 +1,5 @@
 import {EndUserProps as BeDefEUP} from 'be-definitive/types';
-import {TemplMgmtProps} from 'trans-render/lib/mixins/TemplMgmt.js';
+import {TemplMgmtProps} from 'trans-render/lib/types';
 import {Props} from './types';
 import {EndUserProps as BeHdEUP} from 'be-headed/types';
 
@@ -28,7 +28,7 @@ export const make = {
                     }
                 }
             }
-        } as BeDefEUP<Props & TemplMgmtProps<Props>>,
+        } as BeDefEUP<Props & TemplMgmtProps<Props & HTMLElement>>,
     },
     templateE: {
         be: 'headed',
