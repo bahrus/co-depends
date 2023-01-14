@@ -24,5 +24,5 @@ co-depends is a suite of web components based on code-pen entries.
 ## Entry 8.  [Animated Star Rating](https://codepen.io/jkantner/pen/BarvVNa)
 
 ## Entry 9.  [Sidebar Interaction](https://codepen.io/aybukeceylan/pen/wvpBmrq)
-[WIP]
+
 ## Entry 10.  [CSS Marquee Logo Wall](https://codepen.io/hexagoncircle/pen/wvmjomb)
