@@ -288,15 +288,15 @@
                     }
                 }
             </style>
-            <form class="rating">
-                <div class="rating__stars">
+            <form part=rating class="rating">
+                <div part=rating-stars class="rating__stars">
                     <input id="rating-1" class="rating__input rating__input-1" type="radio" name="rating" value="1">
                     <input id="rating-2" class="rating__input rating__input-2" type="radio" name="rating" value="2">
                     <input id="rating-3" class="rating__input rating__input-3" type="radio" name="rating" value="3">
                     <input id="rating-4" class="rating__input rating__input-4" type="radio" name="rating" value="4">
                     <input id="rating-5" class="rating__input rating__input-5" type="radio" name="rating" value="5">
-                    <label class="rating__label" for="rating-1">
-                        <svg class="rating__star" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+                    <label part=rating-label class="rating__label" for="rating-1">
+                        <svg part=rating-star class="rating__star" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
                             <g transform="translate(16,16)">
                                 <circle class="rating__star-ring" fill="none" stroke="#000" stroke-width="16" r="8"
                                     transform="scale(0)" />
@@ -321,8 +321,8 @@
                         </svg>
                         <span class="rating__sr">1 star—Terrible</span>
                     </label>
-                    <label class="rating__label" for="rating-2">
-                        <svg class="rating__star" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+                    <label part=rating-label class="rating__label" for="rating-2">
+                        <svg part=rating-star class="rating__star" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
                             <g transform="translate(16,16)">
                                 <circle class="rating__star-ring" fill="none" stroke="#000" stroke-width="16" r="8"
                                     transform="scale(0)" />
@@ -347,8 +347,8 @@
                         </svg>
                         <span class="rating__sr">2 stars—Bad</span>
                     </label>
-                    <label class="rating__label" for="rating-3">
-                        <svg class="rating__star" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+                    <label part=rating-label class="rating__label" for="rating-3">
+                        <svg part=rating-star class="rating__star" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
                             <g transform="translate(16,16)">
                                 <circle class="rating__star-ring" fill="none" stroke="#000" stroke-width="16" r="8"
                                     transform="scale(0)" />
@@ -373,8 +373,8 @@
                         </svg>
                         <span class="rating__sr">3 stars—OK</span>
                     </label>
-                    <label class="rating__label" for="rating-4">
-                        <svg class="rating__star" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+                    <label part=rating-label class="rating__label" for="rating-4">
+                        <svg part=rating-star class="rating__star" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
                             <g transform="translate(16,16)">
                                 <circle class="rating__star-ring" fill="none" stroke="#000" stroke-width="16" r="8"
                                     transform="scale(0)" />
@@ -399,8 +399,8 @@
                         </svg>
                         <span class="rating__sr">4 stars—Good</span>
                     </label>
-                    <label class="rating__label" for="rating-5">
-                        <svg class="rating__star" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+                    <label part=rating-label class="rating__label" for="rating-5">
+                        <svg part=rating-star class="rating__star" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
                             <g transform="translate(16,16)">
                                 <circle class="rating__star-ring" fill="none" stroke="#000" stroke-width="16" r="8"
                                     transform="scale(0)" />
@@ -425,11 +425,11 @@
                         </svg>
                         <span class="rating__sr">5 stars—Excellent</span>
                     </label>
-                    <p class="rating__display" data-rating="1" hidden>Terrible</p>
-                    <p class="rating__display" data-rating="2" hidden>Bad</p>
-                    <p class="rating__display" data-rating="3" hidden>OK</p>
-                    <p class="rating__display" data-rating="4" hidden>Good</p>
-                    <p class="rating__display" data-rating="5" hidden>Excellent</p>
+                    <p part=rating-display class="rating__display" data-rating="1" hidden>Terrible</p>
+                    <p part=rating-display class="rating__display" data-rating="2" hidden>Bad</p>
+                    <p part=rating-display class="rating__display" data-rating="3" hidden>OK</p>
+                    <p part=rating-display class="rating__display" data-rating="4" hidden>Good</p>
+                    <p part=rating-display class="rating__display" data-rating="5" hidden>Excellent</p>
                 </div>
             </form>
             <be-hive></be-hive>
