@@ -16,7 +16,12 @@ export const make = {
                         viewButtonP: [,{click: {prop: 'isShrinkView', toggleProp: true}}]
                     },
                     transform: {
-                        sidebarContainerP: [,,{'.shrink': 'isShrinkView'}]
+                        sidebarContainerP: [,,{'.shrink': 'isShrinkView'}],
+                        viewButtonP: [iff, 
+                            {if: 'isShrinkView'}, 
+                                [{ariaLabel: ["Expand Sidebar"], title: ["Expand"]}], 
+                                [{ariaLabel: ["Shrink Sidebar"], title: ["Shrink"]}]
+                        ]
                     }
                 }
             }
