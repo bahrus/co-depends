@@ -14,8 +14,8 @@ export const make = {
                         sidebarContainerP: [, , { '.shrink': 'isShrinkView' }],
                         viewButtonP: [iff,
                             { if: 'isShrinkView' },
-                            [{ ariaLabel: ["Expand Sidebar"] }],
-                            [{ ariaLabel: ["Shrink Sidebar"] }]
+                            [{ ariaLabel: ["Expand Sidebar"], title: ["Expand"] }],
+                            [{ ariaLabel: ["Shrink Sidebar"], title: ["Shrink"] }]
                         ]
                     }
                 }
