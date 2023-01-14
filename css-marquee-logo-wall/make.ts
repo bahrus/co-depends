@@ -1,6 +1,5 @@
 import {EndUserProps as BeDefEUP} from 'be-definitive/types';
 import {EndUserProps} from './types';
-import {TemplMgmtProps} from 'trans-render/lib/mixins/TemplMgmt';
 
 export const make = {
     ":host": {
@@ -19,6 +18,6 @@ export const make = {
                     }
                 }
             }
-        } as BeDefEUP<EndUserProps & TemplMgmtProps>,
+        } as BeDefEUP<EndUserProps>,
     },
 }
