@@ -23,7 +23,8 @@ export const make = {
                                 [{ariaLabel: ["Expand Sidebar"], title: ["Expand"]}], 
                                 [{ariaLabel: ["Shrink Sidebar"], title: ["Shrink"]}]
                         ],
-                        themeToggleLabelP: [,,{'.switched': 'isDarkMode'}]
+                        themeToggleLabelP: [,,{'.switched': 'isDarkMode'}],
+                        streamOratorWrapperP: [,,{'.dark': 'isDarkMode'}]
                     }
                 }
             }
