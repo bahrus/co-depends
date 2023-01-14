@@ -35,7 +35,8 @@ export const make = {
                                     [5, 'Excellent']
                                 ]
 
-                            }
+                            },
+                            dispatch: true
                         }
                     }
                 },

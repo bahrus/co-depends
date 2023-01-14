@@ -30,7 +30,8 @@ export const make = {
                                     [4, 'Good'],
                                     [5, 'Excellent']
                                 ]
-                            }
+                            },
+                            dispatch: true
                         }
                     }
                 },
