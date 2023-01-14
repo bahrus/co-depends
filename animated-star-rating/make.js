@@ -4,22 +4,23 @@ export const make = {
         having: {
             config: {
                 propDefaults: {
-                    rating: '0',
-                    ratingAsNumber: 0,
+                    value: '0',
+                    rating: 0,
                 },
                 propInfo: {
-                    rating: {
+                    value: {
                         notify: {
                             toFormValue: true,
                             parseTo: {
-                                key: 'ratingAsNumber',
+                                key: 'rating',
                                 as: 'number'
-                            }
-                        }
+                            },
+                            dispatch: true,
+                        },
                     },
-                    ratingAsNumber: {
+                    rating: {
                         notify: {
-                            toStringTo: 'rating',
+                            toStringTo: 'value',
                             mapTo: {
                                 key: 'ratingDescription',
                                 map: [

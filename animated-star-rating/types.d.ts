@@ -1,6 +1,6 @@
 export interface EndUserProps{
-    rating: string;
-    ratingAsNumber: number;
+    value: string;
+    rating: number;
 }
 
 export interface Props extends EndUserProps{
