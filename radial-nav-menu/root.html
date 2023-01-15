@@ -3,17 +3,17 @@
         <div class=stream-orator-wrapper part=stream-orator-wrapper>
             <!--begin--><!--begin-->
             <style adopt>
-                body {
+                .stream-orator-wrapper {
                     margin: 0px;
                     overflow: hidden;
                     padding: 0px;
                 }
 
-                body input,
-                body h1,
-                body h2,
-                body h3,
-                body a {
+                .stream-orator-wrapper input,
+                .stream-orator-wrapper h1,
+                .stream-orator-wrapper h2,
+                .stream-orator-wrapper h3,
+                .stream-orator-wrapper a {
                     font-family: "Rubik", sans-serif;
                     font-weight: 400;
                     margin: 0px;
@@ -344,7 +344,25 @@
                     }
                 }
             </style>
-            I am here
+            <div id="app">
+                <div id="menu" className={classNames({ toggled })}>
+                    <div id="menu-background-wrapper">
+                      <div id="menu-background"></div>
+                    </div>
+                    <slot id=menu-profile-image name=profile-image></slot>
+                    <img id="menu-profile-image" src={profileImage}>
+                    <div id="menu-quick-options">
+                      {getQuickOptions()}
+                    </div>
+                    <div id="menu-full-options">
+                      {getFullOptions()}
+                    </div>  
+                </div>
+                <button id="menu-toggle" type="button" onClick={handleOnClick}>
+                    <i className={ toggled ? "fa-solid fa-xmark-large" : "fa-solid fa-bars-staggered" } />
+                </button>
+            </div>
+
             <template id=menu-option>
                 <a target="_blank">
                     <i>
