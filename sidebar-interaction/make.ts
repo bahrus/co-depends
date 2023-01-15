@@ -17,7 +17,7 @@ export const make = {
                         themeToggleP: [,{click: {prop: 'isDarkMode', toggleProp: true}}]
                     },
                     transform: {
-                        sidebarContainerP: [,,{'.shrink': 'isShrinkView'}],
+                         sidebarContainerP: [,,{'.shrink': 'isShrinkView'}],
                         viewButtonP: [conditional, 
                             {if: 'isShrinkView'}, 
                                 [{ariaLabel: ["Expand Sidebar"], title: ["Expand"]}], 

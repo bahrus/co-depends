@@ -8,10 +8,11 @@
 		"newLine": "LF"
 	},
 	"files": [
-		"responsive-honeycomb/make.ts",
-		"nested-dropdown/make.ts",
-		"css-marquee-logo-wall/make.ts",
 		"animated-star-rating/make.ts",
+		"css-marquee-logo-wall/make.ts",
+		"nested-dropdown/make.ts",
+		"radial-nav-menu/make.ts",
+		"responsive-honeycomb/make.ts",
 		"sidebar-interaction/make.ts"
 	],
 	"exclude":[
