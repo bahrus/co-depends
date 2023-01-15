@@ -349,8 +349,8 @@
                     <div id="menu-background-wrapper">
                       <div id="menu-background"></div>
                     </div>
-                    <slot id=menu-profile-image name=profile-image></slot>
-                    <img id="menu-profile-image" src={profileImage}>
+                    <slot name=profile-image></slot>
+                    <div></div>
                     <div id="menu-quick-options">
                       {getQuickOptions()}
                     </div>
@@ -359,13 +359,13 @@
                     </div>  
                 </div>
                 <button id="menu-toggle" type="button" onClick={handleOnClick}>
-                    <i className={ toggled ? "fa-solid fa-xmark-large" : "fa-solid fa-bars-staggered" } />
+                    <i className={ toggled ? "fa-solid fa-xmark-large" : "fa-solid fa-bars-staggered" } ></i>
                 </button>
             </div>
 
-            <template id=menu-option>
+            <template id=menu-option be-gone>
                 <a target="_blank">
-                    <i>
+                    <i></i>
                     <h3></h3>
                   </a>
             </template>
@@ -375,6 +375,9 @@
                 export const definitive = {
                     impl: ['be-definitive/be-definitive.js', 'https://esm.run/be-definitive@0.0.90']
                 };
+                export const ferried = {
+                    impl: ['be-ferried/be-ferried.js', 'https://esm.run/be-ferried@0.0.45']
+                }
             </script>
             <!--end--><!--end-->
         </div>

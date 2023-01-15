@@ -1,5 +1,5 @@
 export interface EndUserProps{
-    toggled?: boolean;
+    open?: boolean;
 }
 
 export interface Props extends EndUserProps{
@@ -12,16 +12,20 @@ export interface IMenuOptionsEndUserProps {
     label: string;
     url: string;
     type: 'quick' | 'full';
+    open: boolean;
 }
 
-export interface IMenuOptionProps extends IMenuOptionsEndUserProps {
+export interface IMenuOptionsDerivedProps{
     hyperlinkCss: string;
-    open: boolean;
     closed: boolean,
     transitionDelay: string,
     labelCss: 'tooltip' | 'label';
 }
 
+export interface IMenuOptionProps extends IMenuOptionsEndUserProps, IMenuOptionsDerivedProps {
+
+}
+
 export interface IMenuOptionActions {
-    derive(self: this): Partial<IMenuOptionProps>;
+    derive(self: this): IMenuOptionsDerivedProps;
 }

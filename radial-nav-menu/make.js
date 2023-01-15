@@ -32,13 +32,17 @@ export const make = {
             }
         },
     },
+    profileImageN: {
+        be: 'ferried',
+    },
     menuOptionId: {
         be: 'definitive',
         having: {
             config: {
+                derivedProps: ['closed', 'hyperlinkCss', 'transitionDelay', 'labelCss'],
                 propDefaults: {
-                    icon: '', label: '', url: '', open: false, closed: true, hyperlinkCss: '', transitionDelay: '0ms',
-                    type: 'quick', index: 0, labelCss: 'tooltip', noshadow: true,
+                    icon: '', label: '', url: '', open: false,
+                    type: 'quick', index: 0, noshadow: true,
                     transform: {
                         aE: [{
                                 href: 'url',

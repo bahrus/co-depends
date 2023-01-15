@@ -25,7 +25,7 @@
     "be-ferried": "0.0.45",
     "be-headed": "0.0.3",
     "be-importing": "0.0.55",
-    "be-definitive": "0.0.90" 
+    "be-definitive": "0.0.91" 
   },
   "devDependencies": {
     "@skypack/package-check": "0.2.2",

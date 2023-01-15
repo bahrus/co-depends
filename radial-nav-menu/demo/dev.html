@@ -7,11 +7,18 @@
     <title>Document</title>
 </head>
 <body>
-    <radial-nav-menu be-importing=co-depends/radial-nav-menu/root.html></radial-nav-menu>
+    <radial-nav-menu be-importing=co-depends/radial-nav-menu/root.html>
+        <img id=menu-profile-image alt="Profile Image of a lion." slot=profile-image src="https://images.unsplash.com/photo-1614027164847-1b28cfe1df60?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bGlvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60">
+    </radial-nav-menu>
 
     <menu-option>
-        <img alt="Profile Image of a lion." slot=profile-image src="https://images.unsplash.com/photo-1614027164847-1b28cfe1df60?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bGlvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60">
+        
     </menu-option>
+
+    <radial-nav-menu>
+        <img id=menu-profile-image alt="Profile Image of a lion." slot=profile-image src="https://images.unsplash.com/photo-1614027164847-1b28cfe1df60?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bGlvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60">
+    </radial-nav-menu>
+
     <script type=importmap>
         {
             "imports": {
@@ -20,7 +27,7 @@
                 "be-decorated/": "../../node_modules/be-decorated/",
                 "be-definitive/": "../be-definitive/",
                 "be-exportable/": "../../node_modules/be-exportable/",
-                "be-ferried/": "../../node_modules/be-ferried/",
+                "be-ferried/": "../be-ferried/",
                 "be-having/": "../../node_modules/be-having/",
                 "be-headed/": "../../node_modules/be-headed/",
                 "be-hive/": "../../node_modules/be-hive/",
@@ -28,7 +35,7 @@
                 "be-one-and-only/": "../../node_modules/be-one-and-only/",
                 "be-written/": "../../node_modules/be-written/",
                 "stream-orator/": "../../node_modules/stream-orator/",
-                "trans-render/": "../../node_modules/trans-render/",
+                "trans-render/": "../trans-render/",
                 "xtal-element/": "../../node_modules/xtal-element/",
                 "co-depends/": "../../"
             }

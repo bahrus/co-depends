@@ -1,17 +1,17 @@
 import {EndUserProps as BeDefEUP} from 'be-definitive/types';
 import {TemplMgmtProps, PSettings} from 'trans-render/lib/types';
-import {Props, IMenuOptionProps, IMenuOptionsEndUserProps, IMenuOptionActions} from './types';
+import {Props, IMenuOptionProps, IMenuOptionsDerivedProps, IMenuOptionsEndUserProps, IMenuOptionActions} from './types';
 import {beCloned, beMounted} from 'trans-render/lib/mixins/TemplMgmt.js';
 
 class MenuOptionsVM extends HTMLElement implements IMenuOptionActions{
-    derive(self: this): Partial<IMenuOptionProps> {
+    derive(self: this): IMenuOptionsDerivedProps {
         const {type, open, index} = self;
         return ({
             hyperlinkCss: `menu-${type}-option`,
             transitionDelay: `${(open ? 200 : 0) + 50*index}ms`,
             closed: !open,
             labelCss: type === 'quick' ? 'tooltip' : 'label'
-        }) as Partial<IMenuOptionProps>
+        }) as IMenuOptionsDerivedProps;
     }
 }
 
@@ -30,7 +30,7 @@ export const make = {
                     isC:{
                         notify:{
                             toggleTo: {
-                                key: 'toggled',
+                                key: 'open',
                                 delay: 1000,
                             }
                         }
@@ -39,13 +39,17 @@ export const make = {
             }
         } as BeDefEUP<Props & TemplMgmtProps<Props & HTMLElement>>,
     },
+    profileImageN: {
+        be: 'ferried',
+    },
     menuOptionId: {
         be: 'definitive',
         having: {
             config:{
+                derivedProps: ['closed', 'hyperlinkCss', 'transitionDelay', 'labelCss'],
                 propDefaults:{
-                    icon: '', label: '', url: '', open: false, closed: true, hyperlinkCss: '', transitionDelay: '0ms',
-                    type: 'quick', index: 0, labelCss: 'tooltip', noshadow: true,
+                    icon: '', label: '', url: '', open: false,
+                    type: 'quick', index: 0, noshadow: true,
                     transform: {
                         aE: [{
                             href: 'url',
