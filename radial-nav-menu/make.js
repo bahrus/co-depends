@@ -6,6 +6,7 @@ class MenuOptionsVM extends HTMLElement {
             hyperlinkCss: `menu-${type}-option`,
             transitionDelay: `${(open ? 200 : 0) + 50 * index}ms`,
             closed: !open,
+            labelCss: type === 'quick' ? 'tooltip' : 'label'
         });
     }
 }
@@ -45,14 +46,23 @@ export const make = {
                     transitionDelay: '0ms',
                     type: 'quick',
                     index: 0,
+                    labelCss: 'tooltip',
+                    noshadow: true,
                     transform: {
-                        a: [{
+                        aE: [{
                                 href: 'url',
                                 className: 'hyperlinkCss',
-                                disabled: 'closed',
                             }],
                         '^': [{
+                                disabled: 'closed',
                                 '.style.transitionDelay': 'transitionDelay',
+                            }],
+                        iE: [{
+                                className: 'icon'
+                            }],
+                        h3: [{
+                                textContent: 'label',
+                                className: 'labelCss',
                             }],
                     }
                 },

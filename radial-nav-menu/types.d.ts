@@ -11,7 +11,7 @@ export interface IMenuOptionsEndUserProps {
     index: number;
     label: string;
     url: string;
-    type: "quick" | "full";
+    type: 'quick' | 'full';
 }
 
 export interface IMenuOptionProps extends IMenuOptionsEndUserProps {
@@ -19,6 +19,7 @@ export interface IMenuOptionProps extends IMenuOptionsEndUserProps {
     open: boolean;
     closed: boolean,
     transitionDelay: string,
+    labelCss: 'tooltip' | 'label';
 }
 
 export interface IMenuOptionActions {

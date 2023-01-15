@@ -10,6 +10,7 @@ class MenuOptionsVM extends HTMLElement implements IMenuOptionActions{
             hyperlinkCss: `menu-${type}-option`,
             transitionDelay: `${(open ? 200 : 0) + 50*index}ms`,
             closed: !open,
+            labelCss: type === 'quick' ? 'tooltip' : 'label'
         }) as Partial<IMenuOptionProps>
     }
 }
@@ -52,16 +53,24 @@ export const make = {
                     transitionDelay: '0ms',
                     type: 'quick',
                     index: 0,
+                    labelCss: 'tooltip',
+                    noshadow: true,
                     transform: {
-                        a: [{
+                        aE: [{
                             href: 'url',
                             className: 'hyperlinkCss',
-                            disabled: 'closed',
-                            
-                        }] as PSettings<HTMLAnchorElement & HTMLInputElement>,
+                        }] as PSettings<HTMLAnchorElement, IMenuOptionProps>,
                         '^': [{
+                            disabled: 'closed',
                             '.style.transitionDelay': 'transitionDelay',
-                        }] as PSettings<any>,
+                        }] as PSettings<any, IMenuOptionProps>,
+                        iE:[{
+                            className: 'icon'
+                        }]   as PSettings<HTMLElement, IMenuOptionProps>,
+                        h3: [{
+                            textContent: 'label',
+                            className: 'labelCss',
+                        }] as PSettings<HTMLLIElement, IMenuOptionProps>,
                     }
 
                 },
