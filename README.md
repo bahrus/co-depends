@@ -25,4 +25,33 @@ co-depends is a suite of web components based on code-pen entries.
 
 ## Entry 9.  [Sidebar Interaction](https://codepen.io/aybukeceylan/pen/wvpBmrq)
 
+"Cleaner" than React.
+
 ## Entry 10.  [CSS Marquee Logo Wall](https://codepen.io/hexagoncircle/pen/wvmjomb)
+
+[Animated BottomBar Experiment](https://codepen.io/chrisbautista/pen/NWXjqLN)
+
+Showcase elegance of css binding with trans-render
+
+[TODO]
+
+[Cursor Glog](https://codepen.io/davidkpiano/pen/gOoNZNe)
+    
+    (specify setting css property via transform, somehow?)
+
+[TODO]
+
+[Lotsa Notifications](https://codepen.io/jkantner/pen/XWzePgp)
+
+Seems usesful, but lotsa imperative code to convert, not seeing anything significant code-wise.
+
+[TODO]
+
+[Light/Dark Toggle](https://codepen.io/jkantner/pen/eYygqJm)
+
+Yet another example where we could use be-bound.
+
+[Responsive NFT Dashboard with Tailwind](https://codepen.io/dilums/pen/YzrvrBy)
+
+See how to use tailwind, dynamically generate shadowDOM from raw HTML
+
