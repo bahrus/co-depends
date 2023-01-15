@@ -61,3 +61,5 @@ See how to use tailwind, dynamically generate shadowDOM from raw HTML
 
 See how to create nested components quickly
 
+Might be a good example to explore be-let, be-scoping, etc more.
+

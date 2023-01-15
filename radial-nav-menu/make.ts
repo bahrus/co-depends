@@ -44,17 +44,8 @@ export const make = {
         having: {
             config:{
                 propDefaults:{
-                    icon: '',
-                    label: '',
-                    url: '',
-                    open: false,
-                    closed: true,
-                    hyperlinkCss: '',
-                    transitionDelay: '0ms',
-                    type: 'quick',
-                    index: 0,
-                    labelCss: 'tooltip',
-                    noshadow: true,
+                    icon: '', label: '', url: '', open: false, closed: true, hyperlinkCss: '', transitionDelay: '0ms',
+                    type: 'quick', index: 0, labelCss: 'tooltip', noshadow: true,
                     transform: {
                         aE: [{
                             href: 'url',
@@ -70,7 +61,7 @@ export const make = {
                         h3: [{
                             textContent: 'label',
                             className: 'labelCss',
-                        }] as PSettings<HTMLLIElement, IMenuOptionProps>,
+                        }] as PSettings<HTMLElement, IMenuOptionProps>,
                     }
 
                 },
