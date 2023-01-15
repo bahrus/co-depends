@@ -15,7 +15,7 @@ export const make = {
         having: {
             config: {
                 propDefaults: {
-                    toggled: false,
+                    open: false,
                     isC: true,
                 },
                 propInfo: {
@@ -42,6 +42,7 @@ export const make = {
                     open: false,
                     closed: true,
                     hyperlinkCss: '',
+                    transitionDelay: '0ms',
                     type: 'quick',
                     index: 0,
                     transform: {
@@ -51,7 +52,7 @@ export const make = {
                                 disabled: 'closed',
                             }],
                         '^': [{
-                                'style.transitionDelay': 'delay'
+                                '.style.transitionDelay': 'transitionDelay',
                             }],
                     }
                 },

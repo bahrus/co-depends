@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <radial-nav-menu be-importing=co-depends/radial-nav-menu/root.html></radial-nav-menu>
+
+    <menu-option></menu-option>
+    <script type=importmap>
+        {
+            "imports": {
+                "be-based/": "../../node_modules/be-based/",
+                "be-bound/": "../../node_modules/be-bound/",
+                "be-decorated/": "../../node_modules/be-decorated/",
+                "be-definitive/": "../be-definitive/",
+                "be-exportable/": "../../node_modules/be-exportable/",
+                "be-ferried/": "../../node_modules/be-ferried/",
+                "be-having/": "../../node_modules/be-having/",
+                "be-headed/": "../../node_modules/be-headed/",
+                "be-hive/": "../../node_modules/be-hive/",
+                "be-importing/": "../../node_modules/be-importing/",
+                "be-one-and-only/": "../../node_modules/be-one-and-only/",
+                "be-written/": "../../node_modules/be-written/",
+                "stream-orator/": "../../node_modules/stream-orator/",
+                "trans-render/": "../../node_modules/trans-render/",
+                "xtal-element/": "../../node_modules/xtal-element/",
+                "co-depends/": "../../"
+            }
+        }
+    </script>
+    <script type=module>
+        import 'be-importing/be-importing.js';
+    </script>
+</body>
+</html>

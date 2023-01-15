@@ -344,13 +344,22 @@
                     }
                 }
             </style>
+            I am here
             <template id=menu-option>
-                <a target="_blank" style={styles}>
+                <a target="_blank">
                     <i className={props.icon} />
                     <h3 className={props.type === "quick" ? "tooltip" : "label"}>{props.label}</h3>
                   </a>
             </template>
+            <be-hive></be-hive>
+            <script nomodule be-having>
+                export const make = ['co-depends/radial-nav-menu/make.js', 'https://esm.run/co-depends@0.0.24/radial-nav-menu/make.js'];
+                export const definitive = {
+                    impl: ['be-definitive/be-definitive.js', 'https://esm.run/be-definitive@0.0.90']
+                };
+            </script>
             <!--end--><!--end-->
         </div>
+
     </template>
 </radial-nav-menu>

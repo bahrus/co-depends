@@ -22,7 +22,7 @@ export const make = {
         having: {
             config: {
                 propDefaults: {
-                    toggled: false,
+                    open: false,
                     isC: true,
                 },
                 propInfo: {
@@ -49,6 +49,7 @@ export const make = {
                     open: false,
                     closed: true,
                     hyperlinkCss: '',
+                    transitionDelay: '0ms',
                     type: 'quick',
                     index: 0,
                     transform: {
@@ -56,11 +57,11 @@ export const make = {
                             href: 'url',
                             className: 'hyperlinkCss',
                             disabled: 'closed',
+                            
                         }] as PSettings<HTMLAnchorElement & HTMLInputElement>,
                         '^': [{
-                            'style.transitionDelay': 'delay'
+                            '.style.transitionDelay': 'transitionDelay',
                         }] as PSettings<any>,
-
                     }
 
                 },
