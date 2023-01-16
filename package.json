@@ -19,13 +19,13 @@
   },
   "homepage": "https://github.com/bahrus/co-depends#readme",
   "dependencies": {
-    "trans-render": "0.0.662",
-    "xtal-element": "0.0.553",
+    "trans-render": "0.0.663",
+    "xtal-element": "0.0.554",
     "be-bound": "0.0.6",
-    "be-ferried": "0.0.45",
+    "be-ferried": "0.0.46",
     "be-headed": "0.0.3",
-    "be-importing": "0.0.55",
-    "be-definitive": "0.0.91" 
+    "be-importing": "0.0.56",
+    "be-definitive": "0.0.92" 
   },
   "devDependencies": {
     "@skypack/package-check": "0.2.2",
