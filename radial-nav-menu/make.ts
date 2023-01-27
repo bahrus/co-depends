@@ -1,8 +1,15 @@
 import {EndUserProps as BeDefEUP} from 'be-definitive/types';
-import {TemplMgmtProps, PSettings} from 'trans-render/lib/types';
+import {TemplMgmtProps, PSettings, RenderContext} from 'trans-render/lib/types';
 import {Props, IMenuOptionProps, IMenuOptionsDerivedProps, IMenuOptionsEndUserProps, IMenuOptionActions} from './types';
 import {beCloned, beMounted} from 'trans-render/lib/mixins/TemplMgmt.js';
 
+
+const html = String.raw;
+class RadialNavMenuVM extends HTMLElement{
+    [html `<get-quick-options/>`](ctx: RenderContext){
+        console.log({ctx});
+    }
+}
 class MenuOptionsVM extends HTMLElement implements IMenuOptionActions{
     derive(self: this): IMenuOptionsDerivedProps {
         const {type, open, index} = self;
@@ -25,6 +32,9 @@ export const make = {
                 propDefaults: {
                     open: false,
                     isC: true,
+                    transform: {
+                        menuQuickOptionsId: html `<get-quick-options/>`
+                    }
                 },
                 propInfo: {
                     isC:{
@@ -36,12 +46,13 @@ export const make = {
                         }
                     }
                 }
-            }
+            },
+            superclass: RadialNavMenuVM
         } as BeDefEUP<Props & TemplMgmtProps<Props & HTMLElement>>,
     },
-    profileImageN: {
-        be: 'ferried',
-    },
+    // profileImageN: {
+    //     be: 'ferried',
+    // },
     menuOptionId: {
         be: 'definitive',
         having: {

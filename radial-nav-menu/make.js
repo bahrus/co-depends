@@ -1,4 +1,10 @@
 import { beCloned, beMounted } from 'trans-render/lib/mixins/TemplMgmt.js';
+const html = String.raw;
+class RadialNavMenuVM extends HTMLElement {
+    [html `<get-quick-options/>`](ctx) {
+        console.log({ ctx });
+    }
+}
 class MenuOptionsVM extends HTMLElement {
     derive(self) {
         const { type, open, index } = self;
@@ -18,23 +24,27 @@ export const make = {
                 propDefaults: {
                     open: false,
                     isC: true,
+                    transform: {
+                        menuQuickOptionsId: html `<get-quick-options/>`
+                    }
                 },
                 propInfo: {
                     isC: {
                         notify: {
                             toggleTo: {
-                                key: 'toggled',
+                                key: 'open',
                                 delay: 1000,
                             }
                         }
                     }
                 }
-            }
+            },
+            superclass: RadialNavMenuVM
         },
     },
-    profileImageN: {
-        be: 'ferried',
-    },
+    // profileImageN: {
+    //     be: 'ferried',
+    // },
     menuOptionId: {
         be: 'definitive',
         having: {
