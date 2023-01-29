@@ -9,6 +9,7 @@
 	},
 	"files": [
 		"animated-star-rating/make.ts",
+		"app-menu-with-lock-screen/make.ts",
 		"css-marquee-logo-wall/make.ts",
 		"nested-dropdown/make.ts",
 		"radial-nav-menu/make.ts",

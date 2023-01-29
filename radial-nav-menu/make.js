@@ -1,8 +1,12 @@
 import { beCloned, beMounted } from 'trans-render/lib/mixins/TemplMgmt.js';
 const html = String.raw;
 class RadialNavMenuVM extends HTMLElement {
-    [html `<get-quick-options/>`](ctx) {
+    [html `<quick-options/>`](ctx, fragment) {
         console.log({ ctx });
+        const { target } = ctx;
+        target.innerHTML = html `<div>Hello, world</div>`;
+    }
+    [html `<menu-option/>`](ctx, fragment) {
     }
 }
 class MenuOptionsVM extends HTMLElement {
@@ -24,9 +28,21 @@ export const make = {
                 propDefaults: {
                     open: false,
                     isC: true,
+                    quickOptions: [
+                        { icon: "fa-solid fa-bell", label: "Notifications", url: "https://codepen.io/Hyperplexed" },
+                        { icon: "fa-solid fa-gear", label: "Settings", url: "https://codepen.io/Hyperplexed" },
+                        { icon: "fa-solid fa-moon", label: "Theme", url: "https://codepen.io/Hyperplexed" }
+                    ],
                     transform: {
-                        menuQuickOptionsId: html `<get-quick-options/>`
-                    }
+                        menuQuickOptionsId: html `
+                            <inner-join with option, index of host.quickOptions>
+                                <menu-option 
+                                    key, icon, label, url, in option;
+                                    index;
+                                    type in host;
+                                /> 
+                            </inner-join>`
+                    },
                 },
                 propInfo: {
                     isC: {
