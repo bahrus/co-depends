@@ -33,5 +33,8 @@ export const make = {
             },
             superclass: ViewModel
         } as BeDefEUP<Props & TemplMgmtProps<Props & HTMLElement>, Actions>
+    },
+    "<>": {
+        be: 'spawn-of'
     }
 }

@@ -26,5 +26,8 @@ export const make = {
             },
             superclass: ViewModel
         }
+    },
+    "<>": {
+        be: 'spawn-of'
     }
 };
