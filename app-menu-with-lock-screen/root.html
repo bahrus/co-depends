@@ -148,7 +148,7 @@
                     transform: translate(-50%, -50%) scale(1);
                 }
 
-                #app.verifying-log-in #app-loading-icon {
+                #app.verifying-log-in app-loading-icon {
                     opacity: 1;
                     transform: translate(-50%, -50%);
                 }
@@ -182,7 +182,8 @@
                     width: 0px;
                 }
 
-                #app #app-loading-icon {
+                #app app-loading-icon {
+                    display: block;
                     left: 50%;
                     opacity: 0;
                     pointer-events: none;
@@ -193,7 +194,7 @@
                     z-index: 2;
                 }
 
-                #app #app-loading-icon i {
+                #app app-loading-icon i {
                     animation: 2s spin ease-in-out infinite;
                     color: white;
                     font-size: 2em;
@@ -932,14 +933,34 @@
                 }
             </style>
             <be-hive></be-hive>
+            <template id=user-status-button>
+                <button type=button class="user-status-button clear-button">
+                    <i></i>
+                </button>
+                <script data-settings='{
+                    "hydratingTransform": {
+                        "buttonE": [{}, {"click": {"prop": "userStatus", "vft": "closest|user-status-button.userStatus"}}]
+                    },
+                    "transform": {
+                        "buttonE": [{"id": "id"}],
+                        "iE": [{"className": "icon"}]
+                    }
+                }'></script>
+            </template>
             <template id=loading-icon>
                 <i className="fa-solid fa-spinner-third" />
             </template>
             <div id=app>
-                <loading-icon id=app-loading-icon href=#loading-icon></loading-icon>
+                <user-status-button be-scoped='{
+                    "icon":  "fa-solid fa-arrow-right-from-arc",
+                    "id": "sign-out-button",
+                    "userStatus": "Logging In"
+                }' href=#user-status-button></user-status-button>
+                <loading-icon href=#loading-icon></loading-icon>
             </div>
             <script id=shared-co-depends-app-menu-with-lock-screen nomodule be-having href=make.ts>
                 export const make=['co-depends/app-menu-with-lock-screen/make.js', 'https://esm.run/co-depends@0.0.24/app-menu-with-lock-screen/make.js'];
+                export const scoped = true;
                 export const definitive = true;
                 export const spawnOf = true;
             </script>

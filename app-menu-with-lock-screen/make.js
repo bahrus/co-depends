@@ -7,6 +7,10 @@ class ViewModel extends HTMLElement {
     }
 }
 export const make = {
+    "beScopedAs": {
+        be: 'scoped',
+        waitForResolved: true,
+    },
     ":host": {
         be: 'definitive',
         having: {
@@ -25,7 +29,7 @@ export const make = {
                 },
             },
             superclass: ViewModel
-        }
+        },
     },
     "<>": {
         be: 'spawn-of'

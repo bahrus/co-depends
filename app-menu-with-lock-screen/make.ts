@@ -13,6 +13,10 @@ class ViewModel extends HTMLElement implements Actions{
 interface ViewModel extends Props{}
 
 export const make = {
+    "beScopedAs": {
+        be: 'scoped',
+        waitForResolved: true,
+    },
     ":host": {
         be: 'definitive',
         having: {
@@ -32,7 +36,7 @@ export const make = {
 
             },
             superclass: ViewModel
-        } as BeDefEUP<Props & TemplMgmtProps<Props & HTMLElement>, Actions>
+        } as BeDefEUP<Props & TemplMgmtProps<Props & HTMLElement>, Actions>,
     },
     "<>": {
         be: 'spawn-of'
