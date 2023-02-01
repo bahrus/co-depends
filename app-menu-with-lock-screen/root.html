@@ -939,7 +939,7 @@
                 </button>
                 <script data-settings='{
                     "hydratingTransform": {
-                        "buttonE": [{}, {"click": {"prop": "userStatus", "vft": "closest|user-status-button.userStatus"}}]
+                        "buttonE": [{}, {"click": {"prop": "userStatus", "vft": "closest|user-status-button.beDecorated.scoped.scope.userStatus"}}]
                     },
                     "transform": {
                         "buttonE": [{"id": "id"}],
@@ -952,9 +952,11 @@
             </template>
             <div id=app>
                 <user-status-button be-scoped='{
-                    "icon":  "fa-solid fa-arrow-right-from-arc",
-                    "id": "sign-out-button",
-                    "userStatus": "Logging In"
+                    "assign": {
+                        "icon":  "fa-solid fa-arrow-right-from-arc",
+                        "id": "sign-out-button",
+                        "userStatus": "Logging In"
+                    }
                 }' href=#user-status-button></user-status-button>
                 <loading-icon href=#loading-icon></loading-icon>
             </div>

@@ -13,10 +13,10 @@ class ViewModel extends HTMLElement implements Actions{
 interface ViewModel extends Props{}
 
 export const make = {
-    "beScopedAs": {
-        be: 'scoped',
-        waitForResolved: true,
-    },
+    // "beScopedAs": {
+    //     be: 'scoped',
+    //     waitForResolved: true,
+    // },
     ":host": {
         be: 'definitive',
         having: {
