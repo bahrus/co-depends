@@ -951,13 +951,14 @@
                 <i className="fa-solid fa-spinner-third" />
             </template>
             <div id=app>
-                <user-status-button be-scoped='{
-                    "assign": {
+                <app-background href=#app-background></app-background>
+                <user-status-button href=#user-status-button be-scoped='{
+                    
                         "icon":  "fa-solid fa-arrow-right-from-arc",
                         "id": "sign-out-button",
                         "userStatus": "Logging In"
                     }
-                }' href=#user-status-button></user-status-button>
+                ' ></user-status-button>
                 <loading-icon href=#loading-icon></loading-icon>
             </div>
             <script id=shared-co-depends-app-menu-with-lock-screen nomodule be-having href=make.ts>
