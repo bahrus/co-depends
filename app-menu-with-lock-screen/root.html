@@ -933,6 +933,16 @@
                 }
             </style>
             <be-hive></be-hive>
+            <template id=app-tbd>
+                <div id="app-background">
+                    <div id="app-background-image" className="background-image" />
+                </div>
+                <script data-settings='{
+                    "hydratingTransform":{
+                        "appBackgroundId": [{}, {"click": {"prop": "userStatus", "val": "Logging in"}}]
+                    }
+                }'></script>
+            </template>
             <template id=user-status-button>
                 <button type=button class="user-status-button clear-button">
                     <i></i>
@@ -951,14 +961,12 @@
                 <i className="fa-solid fa-spinner-third" />
             </template>
             <div id=app>
-                <app-background href=#app-background></app-background>
+                <app-tbd href=#app-tbd></app-tbd>
                 <user-status-button href=#user-status-button be-scoped='{
-                    
-                        "icon":  "fa-solid fa-arrow-right-from-arc",
-                        "id": "sign-out-button",
-                        "userStatus": "Logging In"
-                    }
-                ' ></user-status-button>
+                    "icon":  "fa-solid fa-arrow-right-from-arc",
+                    "id": "sign-out-button",
+                    "userStatus": "Logging In"
+                }'></user-status-button>
                 <loading-icon href=#loading-icon></loading-icon>
             </div>
             <script id=shared-co-depends-app-menu-with-lock-screen nomodule be-having href=make.ts>
