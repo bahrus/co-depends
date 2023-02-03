@@ -933,7 +933,36 @@
                 }
             </style>
             <be-hive></be-hive>
-            <template id=b-g>
+            <template id=pin-digit>
+                <div class=app-pin-digit className={ focused: props.focused, hidden })}>
+                    <span class="app-pin-digit-value">{props.value || ""}</span>
+                </div>
+            </template>
+            <template id=pin-wrapper>
+                <div idx="app-pin-wrapper">
+                    <input 
+                      disabledx={userStatus !== UserStatus.LoggingIn && userStatus !== UserStatus.LogInError}
+                      idx=app-pin-hidden-input 
+                      maxLength=4 
+                      be-bound=pin
+                      type=number 
+                    />
+                    <div id="app-pin" onClick={handleOnClick}>
+                      <pin-digit id=1 href=#pin-digit focused={pin.length === 0} value={pin[0]} ></pin-digit>
+                      <pin-digit id=2 href=#pin-digit focused={pin.length === 1} value={pin[1]} ></pin-digit>
+                      <pin-digit id=3 href=#pin-digit focused={pin.length === 2} value={pin[2]} ></pin-digit>
+                      <pin-digit id=4 href=#pin-digit focused={pin.length === 3} value={pin[3]} ></pin-digit>
+                    </div>
+                    <h3 id="app-pin-label">Enter PIN (1234) {getErrorText()} {getCancelText()}</h3>
+                  </div>
+                  <script data-settings='{}'>
+                    ({pin, self}, sn) => {
+                        console.log(sn.host.self);
+                        console.log({pin, self});
+                    }
+                  </script>
+            </template>
+            <template id=back-ground>
                 <div id="app-background">
                     <div id="app-background-image" className="background-image" />
                 </div>
@@ -961,7 +990,8 @@
                 <i className="fa-solid fa-spinner-third" />
             </template>
             <div id=app>
-                <b-g href=#b-g></b-g>
+                <pin-wrapper href=#pin-wrapper be-scoped='{"pin": ""}'></pin-wrapper>
+                <!-- <back-ground href=#back-ground></back-ground> -->
                 <div id="sign-in-button-wrapper">
                     <user-status-button href=#user-status-button be-scoped='{
                         "icon":  "fa-solid fa-arrow-right-from-arc",
@@ -977,6 +1007,7 @@
                 export const scoped = true;
                 export const definitive = true;
                 export const spawnOf = true;
+                export const bound = true;
             </script>
         <!--end--><!--end--></div>
     </template>
