@@ -11,7 +11,7 @@ export const make = {
     //     be: 'scoped',
     //     waitForResolved: true,
     // },
-    ":host": {
+    ':host': {
         be: 'definitive',
         having: {
             config: {
@@ -31,7 +31,10 @@ export const make = {
             superclass: ViewModel
         },
     },
-    "<>": {
+    '<>': {
         be: 'spawn-of'
+    },
+    'bound': {
+        be: 'bound'
     }
 };

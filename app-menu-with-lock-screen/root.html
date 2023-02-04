@@ -938,27 +938,40 @@
                     <span class="app-pin-digit-value">{props.value || ""}</span>
                 </div>
             </template>
+            <template id=error-text>
+                <span id=app-pin-error-text>Invalid</span>
+                <script data-settings='{
+                    "scopeNav": "host",
+                    "transform":{
+                        "appPinErrorTextId": [{"hidden": "notInErrorState"}]                        
+                    }
+                }'></script>
+            </template>
             <template id=pin-wrapper>
-                <div idx="app-pin-wrapper">
+                  <div id="app-pin-wrapper">
                     <input 
-                      disabledx={userStatus !== UserStatus.LoggingIn && userStatus !== UserStatus.LogInError}
-                      idx=app-pin-hidden-input 
+                      
                       maxLength=4 
                       be-bound=pin
                       type=number 
-                    />
+                    >
                     <div id="app-pin" onClick={handleOnClick}>
-                      <pin-digit id=1 href=#pin-digit focused={pin.length === 0} value={pin[0]} ></pin-digit>
-                      <pin-digit id=2 href=#pin-digit focused={pin.length === 1} value={pin[1]} ></pin-digit>
-                      <pin-digit id=3 href=#pin-digit focused={pin.length === 2} value={pin[2]} ></pin-digit>
-                      <pin-digit id=4 href=#pin-digit focused={pin.length === 3} value={pin[3]} ></pin-digit>
+                      <pin-digit id=1 href=#pin-digit ></pin-digit>
+                      <pin-digit id=2 href=#pin-digit></pin-digit>
+                      <pin-digit id=3 href=#pin-digit></pin-digit>
+                      <pin-digit id=4 href=#pin-digit></pin-digit>
                     </div>
-                    <h3 id="app-pin-label">Enter PIN (1234) {getErrorText()} {getCancelText()}</h3>
+                    <h3 id="app-pin-label">Enter PIN (1234)
+                         <error-text href=#error-text></error-text> 
+                         {getCancelText()}
+                    </h3>
                   </div>
                   <script data-settings='{}'>
-                    ({pin, self}, sn) => {
-                        console.log(sn.host.self);
-                        console.log({pin, self});
+                    ({pin}, {host}) => {
+                        if(pin.length === 4){
+                            host.verifyLogin(pin);
+                        }
+                        
                     }
                   </script>
             </template>

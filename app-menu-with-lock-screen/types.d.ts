@@ -3,7 +3,8 @@ export interface EndUserProps{
 }
 
 export interface Props extends EndUserProps{
-    userStatusCls: string
+    userStatusCls: string,
+    notInErrorState: boolean,
 }
 
 export interface Actions{
