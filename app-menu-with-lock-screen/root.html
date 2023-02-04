@@ -2,7 +2,7 @@
     <template shadowroot=open>
         <div class=stream-orator-wrapper part=stream-orator-wrapper>
             <!--begin--><!--begin-->
-            <style adopt>
+            <stylex hidden adopt>
                 /* -- */
                 @keyframes blink {
 
@@ -931,7 +931,7 @@
                         width: 100%;
                     }
                 }
-            </style>
+            </stylex>
             <be-hive></be-hive>
             <template id=pin-digit>
                 <div class=app-pin-digit className={ focused: props.focused, hidden })}>
@@ -941,7 +941,7 @@
             <template id=error-text>
                 <span id=app-pin-error-text>Invalid</span>
                 <script data-settings='{
-                    "scopeNav": "host",
+                    "scopeNav": "host.ref",
                     "transform":{
                         "appPinErrorTextId": [{"hidden": "notInErrorState"}]                        
                     }
@@ -969,7 +969,7 @@
                   <script data-settings='{}'>
                     ({pin}, {host}) => {
                         if(pin.length === 4){
-                            host.verifyLogin(pin);
+                            host.ref.verifyLogin(pin);
                         }
                         
                     }

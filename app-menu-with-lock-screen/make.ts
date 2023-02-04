@@ -92,6 +92,7 @@ export const make = {
                 propDefaults:{
                     userStatus: 'Logged Out',
                     userStatusCls: 'logged-out',
+                    notInErrorState: true,
                     transform:{
                         appId:[{className: 'userStatusCls'}]
                     }
