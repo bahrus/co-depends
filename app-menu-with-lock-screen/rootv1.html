@@ -1042,7 +1042,7 @@
                 </button>
                 <script data-settings='{
                     "hydratingTransform": {
-                        "buttonE": [{}, {"click": {"prop": "userStatus", "vft": "closest|[itemscope].beDecorated.scoped.scope.userStatus"}}]
+                        "buttonE": [{}, {"click": {"prop": "userStatus", "vft": "$$.scopeContainer.scope.userStatus"}}]
                     },
                     "transform": {
                         "buttonE": [{"id": "id"}],
@@ -1051,7 +1051,7 @@
                 }'></script>
             </template>
             <template id=loading-icon>
-                <i className="fa-solid fa-spinner-third" />
+                <i class="fa-solid fa-spinner-third">
             </template>
             <div id=app>
                 <info-section href=#info-section be-scoped='{"id": "app-info"}'></info-section>
@@ -1064,7 +1064,6 @@
                         "userStatus": "Logging In"
                     }'></user-status-button>
                 </div>
-
                 <loading-icon href=#loading-icon></loading-icon>
             </div>
             <script id=shared-co-depends-app-menu-with-lock-screen nomodule be-having href=make.ts>

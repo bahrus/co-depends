@@ -3,9 +3,30 @@
         <div class=stream-orator-wrapper part=stream-orator-wrapper><!--begin--><!--begin-->
             <be-hive></be-hive>
 
-            <loading-icon href=#loading-icon>
-                <i className="fa-solid fa-spinner-third" />
-            </loading-icon>
+            <div id="sign-in-button-wrapper">
+
+                <user-status-button href=. be-scoped='{
+                    "icon":  "fa-solid fa-arrow-right-from-arc",
+                    "id": "sign-out-button",
+                    "userStatus": "Logging In"
+                }'>
+                    <button type=button class="user-status-button clear-button">
+                        <i></i>
+                    </button>
+                    <script nomodule data-settings='{
+                        "hydratingTransform": {
+                            "buttonE": [{}, {"click": {"prop": "userStatus", "vft": "closest|[itemscope].beDecorated.scoped.scope.userStatus"}}]
+                        },
+                        "transform": {
+                            "buttonE": [{"id": "id"}],
+                            "iE": [{"className": "icon"}]
+                        }
+                    }'></script>
+                </user-status-button>
+            </div>
+            <div id=app>
+                <i class="fa-solid fa-spinner-third"></i>
+            </div>
             <script id=shared-co-depends-app-menu-with-lock-screen nomodule be-having href=make.ts>
                 export const make=['co-depends/app-menu-with-lock-screen/make.js', 'https://esm.run/co-depends@0.0.24/app-menu-with-lock-screen/make.js'];
                 export const scoped = true;
