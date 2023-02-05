@@ -933,6 +933,21 @@
                 }
             </stylex>
             <be-hive></be-hive>
+            <template id=time-section>
+                [Use a reusable web component to show the time]
+            </template>
+            <template id=info-section>
+                <div class=info>
+                    <time-section href=#time-section></time-section>
+                </div>
+                <script data-settings='{
+                    "transform":{
+                        "infoC": [{"id": "id"}]
+                    }
+                }'>
+
+                </script>
+            </template>
             <template id=pin-digit>
                 <div class=app-pin-digit>
                     <span class="app-pin-digit-value"></span>
@@ -1039,8 +1054,9 @@
                 <i className="fa-solid fa-spinner-third" />
             </template>
             <div id=app>
+                <info-section href=#info-section be-scoped='{"id": "app-info"}'></info-section>
                 <pin-wrapper href=#pin-wrapper be-scoped='{"pin": ""}'></pin-wrapper>
-                <!-- <back-ground href=#back-ground></back-ground> -->
+                <back-ground href=#back-ground></back-ground>
                 <div id="sign-in-button-wrapper">
                     <user-status-button href=#user-status-button be-scoped='{
                         "icon":  "fa-solid fa-arrow-right-from-arc",
