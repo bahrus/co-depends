@@ -956,12 +956,12 @@
             <template id=pin-wrapper>
                   <div id="app-pin-wrapper">
                     <input 
-                      
+                      id=app-pin-hidden-input
                       maxLength=4 
                       be-bound=pin
                       type=number 
                     >
-                    <div id="app-pin" onClick={handleOnClick}>
+                    <div id="app-pin">
                       <pin-digit id=_1 href=#pin-digit ></pin-digit>
                       <pin-digit id=_2 href=#pin-digit></pin-digit>
                       <pin-digit id=_3 href=#pin-digit></pin-digit>
@@ -973,6 +973,9 @@
                     </h3>
                   </div>
                   <script data-settings='{
+                    "hydratingTransform": {
+                        "appPinId": [{}, {"click": {"to": "app-pin-hidden-input", "fn": "focus"}}]
+                    },
                     "transform":{
                         "#_1": [{".$.value": ".pin.0", ".$.focused": "pin1_focused"}],
                         "#_2": [{".$.value": ".pin.1", ".$.focused": "pin2_focused"}],
