@@ -45,7 +45,7 @@ I think there are two plausible reasons the author has for doing this (perhaps b
 
 I want to be clear that I'm grateful to be able to peer into the thinking behind this example, and use it as a springboard for testing out equivalent ways of doing this with web components and decorator based components, that aren't really web components, but act that way.  Meaning I have nothing but the deep most respect for the developer and wish them well, and am thankful for the demo.
 
-I'm working on two versions -- one that breaks down the UI in exactly the same way as the original, with attention being placed on achieving similar, or perhaps event better developer experience.  From a performance point of view, this version would definitely benefit from some build time optimization, where the separate components are inlined.
+I'm working on two versions -- one that breaks down the UI in exactly the same way as the original, with attention being placed on achieving similar, or perhaps even better developer experience (especially with additional help from the IDE).  From a performance point of view, this version would definitely benefit from some build time optimization, where the separate components are inlined.
 
 The second demo is more performant without the build step, and I'm using to test out exactly how that build time optimization would work.  And I think it is also more in tune with how my reasoning works (exercise more of the 20 line limit).
 
