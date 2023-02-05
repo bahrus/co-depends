@@ -934,9 +934,14 @@
             </stylex>
             <be-hive></be-hive>
             <template id=pin-digit>
-                <div class=app-pin-digit className={ focused: props.focused, hidden })}>
-                    <span class="app-pin-digit-value">{props.value || ""}</span>
+                <div class=app-pin-digit >
+                    <span class="app-pin-digit-value"></span>
                 </div>
+                <script data-settings='{
+                    "transform": {
+                        "span": "value"
+                    }
+                }'></script>
             </template>
             <template id=error-text>
                 <span id=app-pin-error-text>Invalid</span>
@@ -956,17 +961,24 @@
                       type=number 
                     >
                     <div id="app-pin" onClick={handleOnClick}>
-                      <pin-digit id=1 href=#pin-digit ></pin-digit>
-                      <pin-digit id=2 href=#pin-digit></pin-digit>
-                      <pin-digit id=3 href=#pin-digit></pin-digit>
-                      <pin-digit id=4 href=#pin-digit></pin-digit>
+                      <pin-digit id=_1 href=#pin-digit ></pin-digit>
+                      <pin-digit id=_2 href=#pin-digit></pin-digit>
+                      <pin-digit id=_3 href=#pin-digit></pin-digit>
+                      <pin-digit id=_4 href=#pin-digit></pin-digit>
                     </div>
                     <h3 id="app-pin-label">Enter PIN (1234)
                          <error-text href=#error-text></error-text> 
                          {getCancelText()}
                     </h3>
                   </div>
-                  <script data-settings='{}'>
+                  <script data-settings='{
+                    "transform":{
+                        "#_1": [{".$.value": ".pin.0"}],
+                        "#_2": [{".$.value": ".pin.1"}],
+                        "#_3": [{".$.value": ".pin.2"}],
+                        "#_4": [{".$.value": ".pin.3"}]
+                    }
+                  }'>
                     ({pin}, {host}) => {
                         if(pin.length === 4){
                             host.ref.verifyLogin(pin);
