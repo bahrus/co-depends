@@ -953,6 +953,14 @@
                     }
                 }'></script>
             </template>
+            <template id=cancel-text>
+                <span id="app-pin-cancel-text">Cancel</span>
+                <script data-settings='{
+                    "hydratingTransform": {
+                        "appPinCancelTextId": [{},{"click": {"prop": "userStatus", "val": "Logged Out"}}]
+                    }
+                }'></script>
+            </template>
             <template id=pin-wrapper>
                   <div id="app-pin-wrapper">
                     <input 
@@ -969,7 +977,7 @@
                     </div>
                     <h3 id="app-pin-label">Enter PIN (1234)
                          <error-text href=#error-text></error-text> 
-                         {getCancelText()}
+                         <cancel-text href=#cancel-text></cancel-text>
                     </h3>
                   </div>
                   <script data-settings='{
