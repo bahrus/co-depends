@@ -934,12 +934,13 @@
             </stylex>
             <be-hive></be-hive>
             <template id=pin-digit>
-                <div class=app-pin-digit >
+                <div class=app-pin-digit>
                     <span class="app-pin-digit-value"></span>
                 </div>
                 <script data-settings='{
                     "transform": {
-                        "span": "value"
+                        "divE": [{},{},{".focused": "focused"}],
+                        "spanE": "value"
                     }
                 }'></script>
             </template>
@@ -973,17 +974,22 @@
                   </div>
                   <script data-settings='{
                     "transform":{
-                        "#_1": [{".$.value": ".pin.0"}],
-                        "#_2": [{".$.value": ".pin.1"}],
-                        "#_3": [{".$.value": ".pin.2"}],
-                        "#_4": [{".$.value": ".pin.3"}]
+                        "#_1": [{".$.value": ".pin.0", ".$.focused": "pin1_focused"}],
+                        "#_2": [{".$.value": ".pin.1", ".$.focused": "pin2_focused"}],
+                        "#_3": [{".$.value": ".pin.2", ".$.focused": "pin3_focused"}],
+                        "#_4": [{".$.value": ".pin.3", ".$.focused": "pin4_focused"}]
                     }
                   }'>
                     ({pin}, {host}) => {
                         if(pin.length === 4){
                             host.ref.verifyLogin(pin);
                         }
-                        
+                        return {
+                            pin1_focused: pin.length === 0,
+                            pin2_focused: pin.length === 1,
+                            pin3_focused: pin.length === 2,
+                            pin4_focused: pin.length === 3,
+                        }
                     }
                   </script>
             </template>
