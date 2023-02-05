@@ -56,10 +56,11 @@ const T: ITimeUtility = {
   }
 
 class ViewModel extends HTMLElement implements Actions{
-    getStatusClass({userStatus}: this){
+    provideUIHints({userStatus}: this){
         return {
             userStatusCls: userStatus.replace(/\s+/g, "-").toLowerCase(),
-            notInErrorState: userStatus !== 'Log In Error'
+            notInErrorState: userStatus !== 'Log In Error',
+            pinEnteringNotEnabled: userStatus === 'Logging In' || userStatus === 'Log In Error'
         } as Partial<Props>
     }
 
@@ -99,7 +100,7 @@ export const make = {
                 },
                 actions:{
                     ...beCloned,
-                    getStatusClass: 'userStatus',
+                    provideUIHints: 'userStatus',
                     ...beMounted,
                 },
 

@@ -8,5 +8,5 @@ export interface Props extends EndUserProps{
 }
 
 export interface Actions{
-    getStatusClass(self: Props): Partial<Props>
+    provideUIHints(self: Props): Partial<Props>
 }

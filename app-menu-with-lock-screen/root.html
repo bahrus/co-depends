@@ -965,6 +965,7 @@
                   <div id="app-pin-wrapper">
                     <input 
                       id=app-pin-hidden-input
+                      disabled
                       maxLength=4 
                       be-bound=pin
                       type=number 
@@ -999,10 +1000,16 @@
                             pin1_focused: pin.length === 0,
                             pin2_focused: pin.length === 1,
                             pin3_focused: pin.length === 2,
-                            pin4_focused: pin.length === 3,
+                            pin4_focused: pin.length === 3
                         }
                     }
                   </script>
+                  <script data-settings='{
+                    "scopeNav": "host.ref",
+                    "transform":{
+                        "inputE": [{"disabled": "pinEnteringNotEnabled"}]
+                    }
+                  }'></script>
             </template>
             <template id=back-ground>
                 <div id="app-background">

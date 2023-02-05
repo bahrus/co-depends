@@ -34,10 +34,11 @@ const LogInUtility = {
     }
 };
 class ViewModel extends HTMLElement {
-    getStatusClass({ userStatus }) {
+    provideUIHints({ userStatus }) {
         return {
             userStatusCls: userStatus.replace(/\s+/g, "-").toLowerCase(),
-            notInErrorState: userStatus !== 'Log In Error'
+            notInErrorState: userStatus !== 'Log In Error',
+            pinEnteringNotEnabled: userStatus === 'Logging In' || userStatus === 'Log In Error'
         };
     }
     async verifyLogin(pin) {
@@ -72,7 +73,7 @@ export const make = {
                 },
                 actions: {
                     ...beCloned,
-                    getStatusClass: 'userStatus',
+                    provideUIHints: 'userStatus',
                     ...beMounted,
                 },
             },
