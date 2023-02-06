@@ -2,10 +2,19 @@
     <template shadowroot=open>
         <div class=stream-orator-wrapper part=stream-orator-wrapper><!--begin--><!--begin-->
             <be-hive></be-hive>
-
+            <template id=user-status-button>
+                <script data-settings='{
+                    "hydratingTransform": {
+                        "buttonE": [{}, {"click": {"prop": "userStatus", "vft": "$$.itemscope.userStatus"}}]
+                    },
+                    "transform": {
+                        "buttonE": [{"id": "id"}],
+                        "iE": [{"className": "icon"}]
+                    }
+                }'></script>
+            </template>
             <div id="sign-in-button-wrapper">
-
-                <user-status-button href=. be-scoped='{
+                <user-status-button href=#user-status-button  be-scoped='{
                     "icon":  "fa-solid fa-arrow-right-from-arc",
                     "id": "sign-out-button",
                     "userStatus": "Logging In"
@@ -13,15 +22,6 @@
                     <button type=button class="user-status-button clear-button">
                         <i></i>
                     </button>
-                    <script nomodule data-settings='{
-                        "hydratingTransform": {
-                            "buttonE": [{}, {"click": {"prop": "userStatus", "vft": "$$.itemscope.userStatus"}}]
-                        },
-                        "transform": {
-                            "buttonE": [{"id": "id"}],
-                            "iE": [{"className": "icon"}]
-                        }
-                    }'></script>
                 </user-status-button>
             </div>
             <div id=app>
