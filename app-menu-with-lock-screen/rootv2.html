@@ -5,22 +5,14 @@
             <template id=user-status-button>
                 <script data-settings='{
                     "hydratingTransform": {
-                        "buttonE": [{}, {"click": {"prop": "userStatus", "vft": "$$.itemscope.userStatus"}}]
-                    },
-                    "transform": {
-                        "buttonE": [{"id": "id"}],
-                        "iE": [{"className": "icon"}]
+                        "buttonE": [{}, {"click": {"prop": "userStatus", "val": "Logging In"}}]
                     }
                 }'></script>
             </template>
             <div id="sign-in-button-wrapper">
-                <user-status-button href=#user-status-button  be-scoped='{
-                    "icon":  "fa-solid fa-arrow-right-from-arc",
-                    "id": "sign-out-button",
-                    "userStatus": "Logging In"
-                }'>
-                    <button type=button class="user-status-button clear-button">
-                        <i></i>
+                <user-status-button href=#user-status-button>
+                    <button id=sign-out-button type=button class="user-status-button clear-button">
+                        <i class="fa-solid fa-arrow-right-from-arc"></i>
                     </button>
                 </user-status-button>
             </div>
