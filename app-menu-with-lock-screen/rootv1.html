@@ -1042,13 +1042,17 @@
                 </button>
                 <script data-settings='{
                     "hydratingTransform": {
-                        "buttonE": [{}, {"click": {"prop": "userStatus", "vft": "$$.itemscope.userStatus"}}]
+                        "buttonE": [{}, {"click": {"prop": "userStatus", "vft": "$$.itemscope.userStatus"}}],
+                        "^": [{}, {"click": {"navTo": "$", "prop": "cnt", "plusEq": 1}}]
                     },
                     "transform": {
-                        "buttonE": [{"id": "id"}],
+                        "buttonE": [{"disabled": "eq", "id": "id"}],
                         "iE": [{"className": "icon"}]
                     }
-                }'></script>
+                }'>
+                    ({userStatus, cnt}, {host}) => ({eq: host.ref.userStatus === userStatus})
+                </script>
+                
             </template>
             <template id=loading-icon>
                 <i class="fa-solid fa-spinner-third">
