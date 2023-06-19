@@ -24,6 +24,7 @@
     "xtal-element": "0.0.569",
     "be-bound": "0.0.8",
     "be-definitive": "0.0.100",
+    "be-hive": "0.0.107",
     "be-importing": "0.0.63",
     "be-scoped": "0.0.14"
   },

@@ -1,12 +1,6 @@
 <css-minesweeper>
-    <template shadowroot=open><!--begin--><!--begin-->
-        <template>
-            <style>
-                @import "https://fonts.googleapis.com/css?family=Roboto+Mono:700";
-            </style>
-            <template id=fonts.gooleapis.com-css-family-roboto></template>
-        </template>
-        <style>
+    <template shadowrootmode=open><!--begin--><!--begin-->
+        <style adopt>
             :host {
                 display: block;
             }
@@ -3891,27 +3885,12 @@
                 </div>
             </form>
         </div>
-        <be-hive></be-hive>
-        <script id=shared-co-depends-css-minesweeper nomodule be-having='{
-            "make": {
-                ":host": {
-                    "be": "definitive"
-                },
-                "template": {
-                    "be": "headed",
-                    "having": {
-                        "id": "fonts.gooleapis.com-css-family-roboto"
-                    }
-                }
-            }
-        }'>
-            export const definitive = {
-                impl: ['be-definitive/be-definitive.js', 'https://esm.run/be-definitive@0.0.90']
-            };
-            export const headed = {
-                impl: ['be-headed/be-headed.js', 'https://esm.run/be-headed@0.0.3']
-            };
-        </script>
+        <be-hive enh-by-be-definitive></be-hive>
+        <template be-active>
+            <script data-version="0.0.100" id="be-definitive/be-definitive.js"></script>
+            <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:700" rel="stylesheet">
+        </template>
+
         <!--end--><!--end-->
     </template>
 </css-minesweeper>
@@ -3920,7 +3899,7 @@
     if(customElements.get('be-importing') === undefined){
         import('be-importing/be-importing.js').catch(err => {
             console.debug(err);
-            import('https://esm.run/be-importing@0.0.55');
+            import('https://esm.run/be-importing@0.0.63');
         });
     }
 </script>
