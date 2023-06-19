@@ -986,7 +986,7 @@
                       type=number 
                     >
                     <div id="app-pin">
-                      <pin-digit id=_1 href=#pin-digit ></pin-digit>
+                      <pin-digit id=_1 href=#pin-digit></pin-digit>
                       <pin-digit id=_2 href=#pin-digit></pin-digit>
                       <pin-digit id=_3 href=#pin-digit></pin-digit>
                       <pin-digit id=_4 href=#pin-digit></pin-digit>
@@ -1027,7 +1027,7 @@
                   }'></script>
             </template>
             <template id=back-ground>
-                <div nonce id=app-background>
+                <div id=app-background>
                     <div id=app-background-image class="background-image">
                 </div>
                 <script data-settings='{
@@ -1041,6 +1041,12 @@
                     <i></i>
                 </button>
                 <script data-settings='{
+                    "hydrate":[
+                       {"on": "click", "of": "button", "do":[
+                            {"set": "userStatus", "of": "host.ref", "from": "$.scope.userStatus"},
+                            {"inc": "cnt", "of": "$"}
+                       ]}
+                    ],
                     "hydratingTransform": {
                         "buttonE": [{}, {"click": {"prop": "userStatus", "vft": "$$.itemscope.userStatus"}}],
                         "^": [{}, {"click": {"navTo": "$", "prop": "cnt", "plusEq": 1}}]
