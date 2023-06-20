@@ -1,10 +1,5 @@
 <responsive-honeycomb>
-    <template shadowroot=open><!--begin--><!--begin-->
-        <template>
-            <style>
-                @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
-            </style>
-        </template>
+    <template shadowrootmode=open><!--begin--><!--begin-->
         <style adopt>
             :host[hidden]{
                 display: none;
@@ -177,17 +172,15 @@
                 display:none;
             }
         </style>
-        <slot></slot>
+        <slot be-ferried='{
+            "xsltHref": "co-depends/responsive-honeycomb/ferry.xslt"
+        }'></slot>
         <div class="body" id="content"></div>
-        <be-hive></be-hive>
-        <script id=shared-co-depends-response-honeycomb nomodule be-having href=make.ts>
-            export const make=['co-depends/responsive-honeycomb/make.js', 'https://esm.run/co-depends@0.0.24/response-honeycomb/make.js'];
-            export const ferried = {
-                impl: ['be-ferried/be-ferried.js', 'https://esm.run/be-ferried@0.0.43']
-            };
-            export const definitive = {
-                impl: ['be-definitive/be-definitive.js', 'https://esm.run/be-definitive@0.0.90']
-            };
-        </script>
+        <be-hive enh-by-be-definitive></be-hive>
+        <template be-active>
+            <script data-version="0.0.100" id="be-definitive/be-definitive.js"></script>
+            <script data-version="0.0.47" id="be-ferried/be-ferried.js"></script>
+            <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+        </template>
     <!--end--><!--end--></template>
 </responsive-honeycomb>
