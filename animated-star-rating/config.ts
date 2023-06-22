@@ -1,4 +1,3 @@
-import {WCConfig} from 'trans-render/lib/types';
 import {Config} from '../../xtal-element/types';
 import {Props} from './types';
 export const config: Config<Props> = {
