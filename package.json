@@ -21,7 +21,7 @@
   "homepage": "https://github.com/bahrus/co-depends#readme",
   "dependencies": {
     "be-bound": "0.0.8",
-    "be-definitive": "0.0.100",
+    "be-definitive": "0.0.101",
     "be-ferried": "0.0.47",
     "be-hive": "0.0.107",
     "be-importing": "0.0.63",

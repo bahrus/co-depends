@@ -432,7 +432,10 @@
                     <p part=rating-display class="rating__display" data-rating="5" hidden>Excellent</p>
                 </div>
             </form>
-            <be-hive></be-hive>
+            <be-hive enh-by-definitive='{
+                "scriptRef"
+            }'></be-hive>
+            <script nomodule id="shared-co-depends"></script>
             <script id=shared-co-depends-animated-star-rating nomodule be-having href=make.ts>
                 export const make=['co-depends/animated-star-rating/make.js', 'https://esm.run/co-depends@0.0.24/animated-star-rating/make.js'];
                 export const definitive = {

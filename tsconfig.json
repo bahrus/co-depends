@@ -8,12 +8,11 @@
 		"newLine": "LF"
 	},
 	"files": [
-		"animated-star-rating/make.ts",
+		"animated-star-rating/config.ts",
 		"app-menu-with-lock-screen/make.ts",
 		"css-marquee-logo-wall/make.ts",
 		"nested-dropdown/make.ts",
 		"radial-nav-menu/make.ts",
-		"responsive-honeycomb/make.ts",
 		"sidebar-interaction/make.ts"
 	],
 	"exclude":[
