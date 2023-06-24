@@ -2,12 +2,6 @@
     <template>
         <div class=stream-orator-wrapper part=stream-orator-wrapper>
             <!--begin--><!--begin-->
-            <template>
-                <style>
-                    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
-                </style>
-                <template id="fonts.gooleapis.com-css-family-Poppins:wght@400;500"></template>
-            </template>
             <style adopt>
                 * {
                     box-sizing: border-box;
@@ -373,8 +367,10 @@
                     }
                 }
             </style>
-            <div part=sidebar-container class=sidebar-container>
-                <button part=view-button class=sidebar-viewButton type=button>
+            <div itemscope be-linked='Share * from $1.' part=sidebar-container class=sidebar-container>
+                <link itemprop="isDarkMode">
+                <link itemprop="isShrinkView">
+                <button be-linked="Assign view button part props property." part=view-button class=sidebar-viewButton type=button>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="feather feather-chevron-left">
@@ -473,17 +469,24 @@
                 </div>
             </div>
             <be-hive></be-hive>
-            <script id=shared-co-depends-sidebar-interaction be-having>
-                export const make = ['co-depends/sidebar-interaction/make.js', 'https://esm.run/code-depends@0.0.24/sidebar-interactive/make.js'];
-                export const definitive = {
-                    impl: ['be-definitive/be-definitive.js', 'https://esm.run/be-definitive@0.0.90']
-                };
-                export const headed = {
-                    impl: ['be-headed/be-headed.js', 'https://esm.run/be-headed@0.0.3']
-                };
-            </script>
-
+            <script src="config.js" be-definitive='{
+                "complexConfig": "config"
+            }'></script>
+            <template be-active>
+                <script data-version="0.0.102" id="be-definitive/be-definitive.js"></script>
+                <script data-version="0.0.27" id="be-linked/be-linked.js"></script>
+                <link rel="styleshet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap">
+            </template>
             <!--end--><!--end-->
         </div>
     </template>
 </sidebar-interaction>
+
+<script type=module>
+    if(customElements.get('be-importing') === undefined){
+        import('be-importing/be-importing.js').catch(err => {
+            console.debug(err);
+            import('https://esm.run/be-importing@0.0.63');
+        });
+    }
+</script>

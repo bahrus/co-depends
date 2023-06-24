@@ -9,11 +9,11 @@
 	},
 	"files": [
 		"animated-star-rating/config.ts",
-		"app-menu-with-lock-screen/make.ts",
-		"css-marquee-logo-wall/make.ts",
+		//"app-menu-with-lock-screen/make.ts",
+		//"css-marquee-logo-wall/make.ts",
 		"nested-dropdown/make.ts",
-		"radial-nav-menu/make.ts",
-		"sidebar-interaction/make.ts"
+		//"radial-nav-menu/make.ts",
+		"sidebar-interaction/config.ts"
 	],
 	"exclude":[
 		"node_modules"
