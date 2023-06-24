@@ -65,7 +65,7 @@
                     max-height: 600px;
                 }
 
-                div:has(>[itemprop="isShrinkView"][href$="True"]) .sidebar-container {
+                div:has(>[itemprop="isShrinkView"][href$="True"]).sidebar-container {
                     width: 92px;
                 }
 
@@ -368,9 +368,7 @@
                     }
                 }
 
-                div:has(>[itemprop="isShrinkView"][href$="True"]) #test{
-                    color: green
-                }
+
             </style>
             <div itemscope be-linked='Share * from $1.' part=sidebar-container class=sidebar-container>
                 <link itemprop="isDarkMode">
@@ -385,7 +383,6 @@
                         <polyline points="15 18 9 12 15 6" />
                     </svg>
                 </button>
-                <div id="test">hello</div>
                 <div class="sidebar-wrapper">
                     <div class="sidebar-themeContainer">
                         <label part=theme-toggle-label labelFor="theme-toggle" class=sidebar-themeLabel>
