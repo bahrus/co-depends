@@ -20,7 +20,7 @@
                     font-family: "Poppins", sans-serif;
                 }
 
-                .stream-orator-wrapper.dark {
+                .stream-orator-wrapper:has([itemprop="isDarkMode"][href$="True"]) {
                     --main-bg: #00071d;
                     --item-hover: #1c2339;
                     --secondary-bg: #36415e;
@@ -388,7 +388,9 @@
                 <div class="sidebar-wrapper">
                     <div class="sidebar-themeContainer">
                         <label part=theme-toggle-label labelFor="theme-toggle" class=sidebar-themeLabel>
-                            <input part=theme-toggle class="sidebar-themeInput" type="checkbox" id="theme-toggle">
+                            <input be-linked='
+                                Toggle is dark mode property.
+                            ' part=theme-toggle class="sidebar-themeInput" type="checkbox" id="theme-toggle">
                             <div class="sidebar-themeType light">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
