@@ -65,7 +65,7 @@
                     max-height: 600px;
                 }
 
-                .sidebar-container.shrink {
+                div:has(>[itemprop="isShrinkView"][href$="True"]) .sidebar-container {
                     width: 92px;
                 }
 
@@ -86,7 +86,7 @@
                     text-overflow: ellipsis;
                 }
 
-                .shrink .sidebar-themeInputText {
+                div:has(>[itemprop="isShrinkView"][href$="True"]) .sidebar-themeInputText {
                     width: 0;
                     opacity: 0;
                     transform: translatex(-8px);
@@ -104,7 +104,7 @@
                     line-height: 20px;
                 }
 
-                .shrink .sidebar-themeType {
+                div:has(>[itemprop="isShrinkView"][href$="True"]) .sidebar-themeType {
                     width: 100%;
                 }
 
@@ -130,7 +130,7 @@
                     height: 18px;
                 }
 
-                .shrink .sidebar-themeLabel.switched .light {
+                div:has(>[itemprop="isShrinkView"][href$="True"]) .sidebar-themeLabel.switched .light {
                     display: none;
                 }
 
@@ -138,10 +138,11 @@
                     left: 50%;
                 }
 
-                .shrink .sidebar-themeLabel.switched:before {
+                div:has(>[itemprop="isShrinkView"][href$="True"]) .sidebar-themeLabel.switched:before {
                     left: 2px;
                 }
 
+                /* TODO */
                 .sidebar-themeLabel:not(.switched) .shrink .sidebar-themeLabel .dark {
                     display: none;
                 }
@@ -161,7 +162,7 @@
                     transition: left 0.3s ease;
                 }
 
-                .shrink .sidebar-themeLabel:before {
+                div:has(>[itemprop="isShrinkView"][href$="True"]) .sidebar-themeLabel:before {
                     width: calc(100% - 4px);
                 }
 
@@ -194,7 +195,7 @@
                     width: 16px;
                 }
 
-                .shrink .sidebar-viewButton {
+                div:has(>[itemprop="isShrinkView"][href$="True"]) .sidebar-viewButton {
                     transform: rotatey(-180deg);
                 }
 
@@ -217,7 +218,7 @@
                     position: relative;
                 }
 
-                .shrink .sidebar-listItem span {
+                div:has(>[itemprop="isShrinkView"][href$="True"]) .sidebar-listItem span {
                     visibility: hidden;
                 }
 
@@ -257,7 +258,7 @@
                     flex-shrink: 0;
                 }
 
-                .shrink .sidebar-listIcon {
+                div:has(>[itemprop="isShrinkView"][href$="True"]) .sidebar-listIcon {
                     margin-right: 0;
                 }
 
@@ -296,11 +297,11 @@
                     color: var(--text-color);
                 }
 
-                .shrink .sidebar-profileSection span {
+                div:has(>[itemprop="isShrinkView"][href$="True"]) .sidebar-profileSection span {
                     display: none;
                 }
 
-                .shrink .sidebar-profileSection {
+                div:has(>[itemprop="isShrinkView"][href$="True"]) .sidebar-profileSection {
                     border-radius: 50%;
                 }
 
@@ -311,7 +312,7 @@
                     line-height: 20px;
                 }
 
-                .shrink .sidebar-listItemText {
+                div:has(>[itemprop="isShrinkView"][href$="True"]) .sidebar-listItemText {
                     position: absolute;
                     padding: 8px;
                     left: 100%;
