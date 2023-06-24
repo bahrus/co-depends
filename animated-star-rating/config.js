@@ -2,6 +2,7 @@ export const config = {
     propDefaults: {
         value: '0',
         rating: 0,
+        shadowRootMode: 'open',
     },
     derivedProps: ['ratingDescription'],
     propInfo: {

@@ -1,9 +1,11 @@
 import {Config} from '../../xtal-element/types';
+import {TemplMgmtProps} from 'trans-render/lib/types';
 import {Props} from './types';
-export const config: Config<Props> = {
+export const config: Config<Props & TemplMgmtProps> = {
     propDefaults:{
         value: '0',
         rating: 0,
+        shadowRootMode: 'open',
     },
     derivedProps: ['ratingDescription'],
     propInfo:{
