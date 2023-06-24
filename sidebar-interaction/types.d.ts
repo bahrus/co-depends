@@ -4,5 +4,5 @@ export interface EndUserProps{
 }
 
 export interface Props extends EndUserProps{
-
+    viewButtonPartProps: any,
 }

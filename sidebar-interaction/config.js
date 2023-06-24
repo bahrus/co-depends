@@ -1,5 +1,6 @@
 export const config = {
     propDefaults: {
+        viewButtonPartProps: {},
         isDarkMode: false,
         isShrinkView: false,
     },

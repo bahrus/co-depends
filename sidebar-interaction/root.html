@@ -366,17 +366,25 @@
                         opacity: 1;
                     }
                 }
+
+                div:has(>[itemprop="isShrinkView"][href$="True"]) #test{
+                    color: green
+                }
             </style>
             <div itemscope be-linked='Share * from $1.' part=sidebar-container class=sidebar-container>
                 <link itemprop="isDarkMode">
                 <link itemprop="isShrinkView">
-                <button be-linked="Assign view button part props property." part=view-button class=sidebar-viewButton type=button>
+                <button be-linked='
+                    Assign view button part props property.
+                    Toggle is shrink view property.
+                ' part=view-button class=sidebar-viewButton type=button>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="feather feather-chevron-left">
                         <polyline points="15 18 9 12 15 6" />
                     </svg>
                 </button>
+                <div id="test">hello</div>
                 <div class="sidebar-wrapper">
                     <div class="sidebar-themeContainer">
                         <label part=theme-toggle-label labelFor="theme-toggle" class=sidebar-themeLabel>
