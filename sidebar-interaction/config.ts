@@ -3,10 +3,10 @@ import {Props} from './types';
 
 export const config: Config<Props> = {
     propDefaults:{
-        viewButtonPartProps: {},
         isDarkMode: false,
         isShrinkView: false,
     },
+    derivedProps: ['viewButtonPartProps'],
     propInfo: {
         isShrinkView: {
             notify:{

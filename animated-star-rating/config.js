@@ -3,6 +3,7 @@ export const config = {
         value: '0',
         rating: 0,
     },
+    derivedProps: ['ratingDescription'],
     propInfo: {
         value: {
             notify: {

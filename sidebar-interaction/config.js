@@ -1,9 +1,9 @@
 export const config = {
     propDefaults: {
-        viewButtonPartProps: {},
         isDarkMode: false,
         isShrinkView: false,
     },
+    derivedProps: ['viewButtonPartProps'],
     propInfo: {
         isShrinkView: {
             notify: {
