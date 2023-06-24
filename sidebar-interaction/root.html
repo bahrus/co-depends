@@ -67,6 +67,56 @@
 
                 div:has(>[itemprop="isShrinkView"][href$="True"]).sidebar-container {
                     width: 92px;
+
+                    .sidebar-themeInputText {
+                        width: 0;
+                        opacity: 0;
+                        transform: translatex(-8px);
+                    }
+
+                    .sidebar-themeType {
+                        width: 100%;
+                    }
+
+                    .sidebar-themeLabel.switched:before {
+                        left: 2px;
+                    }
+
+                    .sidebar-themeLabel:before {
+                        width: calc(100% - 4px);
+                    }
+
+                    .sidebar-viewButton {
+                        transform: rotatey(-180deg);
+                    }
+
+                    .sidebar-listItem span {
+                        visibility: hidden;
+                    }
+
+                    .sidebar-listIcon {
+                        margin-right: 0;
+                    }
+
+                    .sidebar-profileSection span {
+                        display: none;
+                    }
+
+                    .sidebar-profileSection {
+                        border-radius: 50%;
+                    }
+
+                    .sidebar-listItemText {
+                        position: absolute;
+                        padding: 8px;
+                        left: 100%;
+                        opacity: 0;
+                        background-color: var(--secondary-bg);
+                        color: #fff;
+                        font-size: 12px;
+                        border-radius: 4px;
+                        transition: left 0.3s ease-in-out, opacity 0.3s ease-in-out;
+                    }
                 }
 
                 .sidebar-themeInput {
@@ -84,13 +134,7 @@
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
-                }
-
-                div:has(>[itemprop="isShrinkView"][href$="True"]) .sidebar-themeInputText {
-                    width: 0;
-                    opacity: 0;
-                    transform: translatex(-8px);
-                }
+                } 
 
                 .sidebar-themeType {
                     width: 50%;
@@ -102,10 +146,6 @@
                     z-index: 1;
                     flex-shrink: 0;
                     line-height: 20px;
-                }
-
-                div:has(>[itemprop="isShrinkView"][href$="True"]) .sidebar-themeType {
-                    width: 100%;
                 }
 
                 .sidebar-themeContainer {
@@ -138,9 +178,6 @@
                     left: 50%;
                 }
 
-                div:has(>[itemprop="isShrinkView"][href$="True"]) .sidebar-themeLabel.switched:before {
-                    left: 2px;
-                }
 
                 /* TODO */
                 .sidebar-themeLabel:not(.switched) .shrink .sidebar-themeLabel .dark {
@@ -160,10 +197,6 @@
                     top: 50%;
                     transform: translatey(-50%);
                     transition: left 0.3s ease;
-                }
-
-                div:has(>[itemprop="isShrinkView"][href$="True"]) .sidebar-themeLabel:before {
-                    width: calc(100% - 4px);
                 }
 
                 .sidebar-viewButton {
@@ -195,10 +228,6 @@
                     width: 16px;
                 }
 
-                div:has(>[itemprop="isShrinkView"][href$="True"]) .sidebar-viewButton {
-                    transform: rotatey(-180deg);
-                }
-
                 .sidebar-list {
                     list-style: none;
                     padding: 0;
@@ -216,10 +245,6 @@
                     opacity: 0;
                     padding: 8px 0;
                     position: relative;
-                }
-
-                div:has(>[itemprop="isShrinkView"][href$="True"]) .sidebar-listItem span {
-                    visibility: hidden;
                 }
 
                 .sidebar-listItem.active a {
@@ -258,9 +283,6 @@
                     flex-shrink: 0;
                 }
 
-                div:has(>[itemprop="isShrinkView"][href$="True"]) .sidebar-listIcon {
-                    margin-right: 0;
-                }
 
                 .sidebar-profileSection {
                     display: flex;
@@ -297,31 +319,11 @@
                     color: var(--text-color);
                 }
 
-                div:has(>[itemprop="isShrinkView"][href$="True"]) .sidebar-profileSection span {
-                    display: none;
-                }
-
-                div:has(>[itemprop="isShrinkView"][href$="True"]) .sidebar-profileSection {
-                    border-radius: 50%;
-                }
-
                 .sidebar-listItemText {
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
                     line-height: 20px;
-                }
-
-                div:has(>[itemprop="isShrinkView"][href$="True"]) .sidebar-listItemText {
-                    position: absolute;
-                    padding: 8px;
-                    left: 100%;
-                    opacity: 0;
-                    background-color: var(--secondary-bg);
-                    color: #fff;
-                    font-size: 12px;
-                    border-radius: 4px;
-                    transition: left 0.3s ease-in-out, opacity 0.3s ease-in-out;
                 }
 
                 .sidebar-listItem:nth-child(n+0) {
